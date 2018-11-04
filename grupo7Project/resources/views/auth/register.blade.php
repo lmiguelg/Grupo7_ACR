@@ -25,6 +25,7 @@
                             </div>
                         </div>
 
+
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
@@ -59,6 +60,15 @@
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <select>{{__('category')}}
+                                <option value="armazem">armazem</option>
+                                <option value="loja">loja</option>
+                                <option value="gestor">gestor</option>
+                                <option value="admin">admin</option>
+                            </select>
                         </div>
 
                         <div class="form-group row mb-0">
