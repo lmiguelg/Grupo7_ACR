@@ -25,6 +25,19 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label for="username" class="col-md-4 col-form-label text-md-right">{{ __('Nome de utilizador') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="username" type="text" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" name="username" value="{{ old('username') }}" required autofocus>
+
+                                @if ($errors->has('username'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('username') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
 
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
@@ -63,13 +76,21 @@
                         </div>
 
                         <div class="form-group row">
-                            <select>{{__('category')}}
-                                <option value="armazem">armazem</option>
-                                <option value="loja">loja</option>
-                                <option value="gestor">gestor</option>
-                                <option value="admin">admin</option>
-                            </select>
+                            <label for="category" class="col-md-4 col-form-label text-md-right">{{ __('Categoria') }}</label>
+
+                            <div class="col-md-6">
+
+                                <select name="category">
+
+                                    <option value="armazem">armazem</option>
+                                    <option value="loja">loja</option>
+                                    <option value="gestor">gestor</option>
+                                    <option value="admin">admin</option>
+                                </select>
+
+                            </div>
                         </div>
+
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
