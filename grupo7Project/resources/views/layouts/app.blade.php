@@ -47,11 +47,11 @@
                                 @endif
                             </div>
                         @else
-                        <li class="nav-item">
+                        <div class="nav-item">
 
                                 <a class="nav-link" href="{{ route('products') }}">{{ __('Produtos') }}</a>
 
-                            </li>
+                            </div>
                             <div class="navbar-drop">
                                 <a id="navbarDropdown" class="name_user" style="float: right" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
