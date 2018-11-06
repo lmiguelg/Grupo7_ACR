@@ -78,7 +78,11 @@
                     @endauth
                 </div>
             @endif
-
+            <div class="panel-body">
+                <a href="/addProduct">
+                    <Button>+ Product</Button>
+                </a>
+            </div>
             <div class="content">
                 <div class="title m-b-md">
                     Laravel

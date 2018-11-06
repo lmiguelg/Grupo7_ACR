@@ -17,9 +17,16 @@ Route::get('/', function () {
 });
 
 
+//rotas para os produtos
+Route::get('/addProduct','ProductsController@index');
+Route::post('/addProduct','ProductsController@addProduct')->name('products');
+
+
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 
 //Route::get('/dashboard', 'FuncionarioController@__construct')->name('dashboard');
 
 //Route::post('/dashboard', 'FuncionarioController@registoValidate');
+

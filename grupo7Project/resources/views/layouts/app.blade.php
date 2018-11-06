@@ -17,11 +17,13 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
+
   <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
         <nav class="navbar-top">
+
 
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -34,6 +36,8 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
+
+
                             <div class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </div>
@@ -43,12 +47,18 @@
                                 @endif
                             </div>
                         @else
+                        <li class="nav-item">
+
+                                <a class="nav-link" href="{{ route('products') }}">{{ __('Produtos') }}</a>
+
+                            </li>
                             <div class="navbar-drop">
                                 <a id="navbarDropdown" class="name_user" style="float: right" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-content">
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -59,10 +69,12 @@
                                         @csrf
                                     </form>
                                 </div>
+
                             </div>
                         @endguest
                     </ul>
                 </div>
+
 
         </nav>
 

@@ -4,6 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+
             <div class="form-login">
                 <div class="header">{{ __('Login') }}</div>
 
@@ -20,13 +21,16 @@
                                 @if ($errors->has('username'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('username') }}</strong>
+
                                     </span>
                                 @endif
                             </div>
                         </div>
 
+
                         <div class="login-input">
                             <label for="password">{{ __('Password:') }}</label>
+
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
@@ -40,7 +44,9 @@
                         </div>
 
                         <div class="form-group row">
+
                             <div>
+
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
