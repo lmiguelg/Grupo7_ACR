@@ -11,6 +11,15 @@
 |
 */
 
+Auth::routes();
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
+
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+//Route::get('/dashboard', 'FuncionarioController@__construct')->name('dashboard');
+
+//Route::post('/dashboard', 'FuncionarioController@registoValidate');
