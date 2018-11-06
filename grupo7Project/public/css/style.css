@@ -1,0 +1,73 @@
+.navbar .navbar-inner ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.navbar .navbar-inner ul li {
+    float: left;
+}
+
+.navbar .navbar-inner ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+.navbar .navbar-inner ul li a:hover {
+    background-color: #111;
+}
+
+
+
+/*form products*/
+.divPreForm{
+    width: 100%;
+    background-color:lightblue;
+}
+
+#formAddProduct {
+    min-height: 80px;
+    width:100%;
+
+}
+
+#formAddProduct .divColumnAddProduct{
+    width:20%;
+    float:left;
+}
+
+.productList{
+    margin-top:10%;
+    width:100%;
+    text-align: center;
+}
+/*tabela de produtis*/
+.inventoryTable{
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+
+}
+table.inventoryTable td, table.inventoryTable th {
+    /*border: 1px solid #555555;*/
+    padding: 5px 10px;
+
+}
+table.inventoryTable th{
+    background-color:#c1cbeb;
+    color:black;
+
+}
+table.inventoryTable tr:nth-child(even) {
+    background: #e6ecff;
+  }
+
+
+
+

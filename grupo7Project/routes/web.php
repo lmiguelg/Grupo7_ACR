@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+//rotas para os produtos
+Route::get('/addProduct','ProductsController@index');
+Route::post('/addProduct','ProductsController@addProduct')->name('products');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
