@@ -11,8 +11,9 @@
 |
 */
 
+Auth::routes();
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 
@@ -20,6 +21,12 @@ Route::get('/', function () {
 Route::get('/addProduct','ProductsController@index');
 Route::post('/addProduct','ProductsController@addProduct')->name('products');
 
-Auth::routes();
+
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+//Route::get('/dashboard', 'FuncionarioController@__construct')->name('dashboard');
+
+//Route::post('/dashboard', 'FuncionarioController@registoValidate');
+
