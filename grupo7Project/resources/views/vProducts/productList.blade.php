@@ -1,6 +1,6 @@
 
-@extends('layouts.app')
-@section('content')
+@extends('vProducts.sidebar')
+@section('content2')
 
 
 <h1>Inventory</h1>
@@ -43,12 +43,20 @@
 </div>
 <div class="productList">
     <table class="inventoryTable">
-        <th>Id</th>
-        <th>Name</th>
-        <th>Expiration date</th>
-        <th>Quantity</th>
-        <th>Price(€)</th>
-        <th>Edit</th>
+        <tr >
+            <th id="thTitleInventory" colspan="7">Inventory List</th>
+        </tr>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Expiration date</th>
+            <th>Quantity</th>
+            <th>Price(€)</th>
+            <th>Provider</th>
+            <th>Edit</th>
+
+        </tr>
+
 
     @foreach($products as $product)
         <tr>
@@ -57,15 +65,17 @@
             <td>{{$product->expiration_date}}</td>
             <td>{{$product->quantity}}</td>
             <td>{{$product->price}}</td>
+            <td>(Provider Name)</td>
             <td><a href="" >+</a></td><!--vai redirecionar para o produto
                                         e vai ser possivel editá-lo-->
-
         </tr>
 
     @endforeach
 
     </table>
 </div>
+
+
 
 
 @endsection
