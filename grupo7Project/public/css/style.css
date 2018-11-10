@@ -20,6 +20,7 @@
 .navbar-top a:hover, .navbar-drop:hover {
     background-color: #555;
     color: white;
+
 }
 
 .navbar-drop.name_user {
