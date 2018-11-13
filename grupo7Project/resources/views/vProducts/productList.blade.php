@@ -9,7 +9,7 @@
 
     <h3 class="sectionTitle">Add product to inventory</h3>
     <div class="divPreForm">
-    <form id="formAddProduct" method="POST" action="/addProduct">
+    <form id="formAddProduct" action="#">
         <div class="divColumnAddProduct">
             <label>Product Name</label><br>
             <input type="text" id="inProductName" name="inProductName" required>
@@ -30,7 +30,8 @@
             <input type="number" step="0.01" id="inProductPrice" name="inProductPrice" required>
         </div>
 
-        <input type="hidden" name="_token" value="{{csrf_token()}}">
+        <input type="hidden" id="myToken" name="_token" value="{{ csrf_token() }}">
+
 
         <div class="divColumnAddProduct">
             <input type="submit" value="Add" id="btnAddProduct" >

@@ -18,6 +18,7 @@ class ProductsController extends Controller
 
     public function addProduct(Request $request){
 
+        \Log::info($request);
         //Antes ver os produtos é necessário verificar o utilizador
         $product = new Product;
 
@@ -31,7 +32,13 @@ class ProductsController extends Controller
 
         $product->save();
 
-        return redirect("/addProduct");
+        $products = DB::table('products')->get();
+
+        return response()->json(['success'=>$products]);
+
+        //return redirect("/addProduct");
 
     }
+    //For Update product
+    //public function
 }

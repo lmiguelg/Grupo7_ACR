@@ -23,6 +23,7 @@ Route::post('/addProduct','ProductsController@addProduct')->name('products');
 
 
 
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 
