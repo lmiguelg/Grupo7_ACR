@@ -24,14 +24,21 @@ $(document).ready(function(){
                     'inExpirationDate': inExpirationDate,
                     'inProductPrice':   inProductPrice},
             success:function(data){
-                var lastElement;
-                jQuery.each(data[1],function(element){
-                    lastElement = element;
-                })
-                console.log(lastElement);//sacar o ultimo eleemnto e atualizar a lista
-                //console.log(result);
+
+
+                var result = Object.keys(data).map(function(key) {
+                    return [Number(key), data[key]];
+                });
+                var lastElement = result[0][1][(result[0][1].length) - 1];
+
+                var test = $(".inventoryTable").append("<tr><td>"+lastElement.id+"</td><td>"+lastElement.name+"</td><td>"+lastElement.expiration_date+"</td><td>"+lastElement.quantity+"</td><td>"+lastElement.price+"</td><td>(Provider Name)</td></tr>");
+
+                console.log(lastElement);
+                //$("#inventoryTable").find('tr:last').append();
             }
         });
+        $("#formAddProduct")[0].reset();
+
     });
 
 
