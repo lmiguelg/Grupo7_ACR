@@ -34,7 +34,11 @@ class FornecedorController extends Controller
 
         $fornecedor->save();
 
-        return redirect(route('fornecedor'));
+        $fornecedor = DB::table('fornecedors')->get();
+
+        return response()->json(["success" =>$fornecedor ]);
+
+        //return redirect(route('fornecedor'));
 
     }
 }

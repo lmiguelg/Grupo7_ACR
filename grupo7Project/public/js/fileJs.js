@@ -33,6 +33,55 @@ $(document).ready(function(){
             }
         });
     });
+
+
+    $("#formAddFornecedor").on('submit',function (e) {
+
+        e.preventDefault();
+
+            var inFornecedorNome =$('input[name=inFornecedorNome]').val();
+             var inNIF =$('input[name=inNIF]').val();
+            var inContacto =$('input[name=inContacto]').val();
+            var inMorada =$('input[name=inMorada]').val();
+
+
+            $.ajax({
+
+                type:'POST',
+                url:'/addFornecedor',
+                data:{
+
+                    'inFornecedorNome': inFornecedorNome,
+                    'inNIF': inNIF,
+                    'inContacto': inContacto,
+                    'inMorada' : inMorada
+                },
+                datatype:'json',
+
+                success:function(data){
+
+                 /*  $('#FornecedorTable').DataTable({
+
+                        'processing':true,
+                        'serverSide':true,
+
+
+
+                    })*/
+
+                    //console.log(data);//sacar o ultimo eleemnto e atualizar a lista
+                    //console.log(result);
+
+                }
+
+            });
+
+            $('#formAddFornecedor')[0].reset();
+
+
+
+
+    })
 });
 
 

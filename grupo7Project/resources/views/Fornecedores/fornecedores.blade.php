@@ -8,7 +8,7 @@
 
         <h3 class="sectionTitle">Adiciona fornecedores</h3>
         <div class="divPreForm">
-            <form id="formAddFornecedor" method="POST" action="/addFornecedor">
+            <form id="formAddFornecedor" action="#">
                 <div class="divColumnAddFornecedor">
                     <label>Nome da empresa</label><br>
                     <input type="text" id="inFornecedorNome" name="inFornecedorNome" required>
@@ -42,7 +42,7 @@
 
 
         <div class="FornecedorList">
-            <table class="FornecedorTable">
+            <table class="FornecedorTable" id="FornecedorTable">
                 <th>Id</th>
                 <th>Nome</th>
                 <th>NIF</th>
