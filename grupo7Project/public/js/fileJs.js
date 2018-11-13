@@ -67,17 +67,14 @@ $(document).ready(function(){
 
                 success:function(data){
 
-                 /*  $('#FornecedorTable').DataTable({
+                    var result = Object.keys(data).map(function(key) {
+                        return [Number(key), data[key]];
+                    });
+                    var lastElement = result[0][1][(result[0][1].length) - 1];
 
-                        'processing':true,
-                        'serverSide':true,
+                    var test = $(".FornecedorTable").append("<tr><td>"+lastElement.id+"</td><td>"+lastElement.name+"</td><td>"+lastElement.expiration_date+"</td><td>"+lastElement.quantity+"</td><td>"+lastElement.price+"</td><td>(Provider Name)</td></tr>");
 
-
-
-                    })*/
-
-                    //console.log(data);//sacar o ultimo eleemnto e atualizar a lista
-                    //console.log(result);
+                    console.log(lastElement);
 
                 }
 
