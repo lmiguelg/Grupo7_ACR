@@ -22,6 +22,11 @@ Route::get('/addProduct','ProductsController@index');
 Route::post('/addProduct','ProductsController@addProduct')->name('products');
 
 
+//Rota para os fonecedores
+
+Route::get('/addFornecedor','FornecedorController@index');
+Route::post('/addFornecedor','FornecedorController@addFornecedor')->name('fornecedor');
+
 
 
 Route::get('/home', 'HomeController@index')->name('home');

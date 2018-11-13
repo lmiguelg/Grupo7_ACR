@@ -52,6 +52,11 @@
 
                                 <a class="nav-link" href="{{ route('products') }}">{{ __('Produtos') }}</a>
 
+                        </div>
+                            <div class="nav-item">
+
+                                <a class="nav-link" href="{{ route('fornecedor') }}">{{ __('Fornecedor') }}</a>
+
                             </div>
                             <div class="navbar-drop">
                                 <a id="navbarDropdown" class="name_user" style="float: right" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
