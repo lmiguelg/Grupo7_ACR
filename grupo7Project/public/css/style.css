@@ -182,15 +182,6 @@ table.inventoryTable tr:nth-child(even) {
 
 /*inicio do css da pagina de login */
 .form-login{
-  /*  position: relative;
-    z-index: 1;
-    background: #FFFFFF;
-    max-width: 360px;
-    margin: 0 auto 100px;
-    padding: 45px;
-    text-align: center;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-*/
 
     position: relative;
     margin: 3% auto;
@@ -269,4 +260,26 @@ table.inventoryTable tr:nth-child(even) {
 
 
 /*fim do css da pagina de login*/
+
+/*Inicio do css da pagina dos fornecedores */
+
+#formAddFornecedor {
+
+    min-height: 80px;
+    width:100%;
+    margin-left: auto;
+
+}
+
+#formAddFornecedor .divColumnAddFornecedor{
+
+
+    width:15%;
+    float:left;
+    padding:1% 2% 1% 2%;
+    color:white;
+}
+
+
+
 

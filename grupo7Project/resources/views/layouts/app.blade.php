@@ -17,74 +17,76 @@
 
     <!-- Styles -->
 
-  <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar-top">
+<div id="app">
+    <nav class="navbar-top">
 
 
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Left Side Of Navbar -->
+            <ul class="navbar-nav mr-auto">
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+            </ul>
 
-                    </ul>
+            <!-- Right Side Of Navbar -->
+            <ul class="navbar-nav ml-auto">
+                <!-- Authentication Links -->
+                @guest
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
+                @else
+                    <div class="nav-item">
+                        @if (Route::has('register'))
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('Registar') }}</a>
+                        @endif
+                    </div>
+                    <div class="nav-item">
 
+                        <a class="nav-link" href="{{ route('products') }}">{{ __('Produtos') }}</a>
 
-                            <div class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </div>
-                            <div class="nav-item">
-                                @if (Route::has('register'))
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                @endif
-                            </div>
-                        @else
-                        <div class="nav-item">
+                    </div>
+                    <div class="nav-item">
 
-                                <a class="nav-link" href="{{ route('products') }}">{{ __('Produtos') }}</a>
+                        <a class="nav-link" href="{{ route('fornecedor') }}">{{ __('Fornecedor') }}</a>
 
-                        </div>
-                            <div class="nav-item">
+                    </div>
+                    <div class="nav-item">
 
-                                <a class="nav-link" href="{{ route('fornecedor') }}">{{ __('Fornecedor') }}</a>
+                        <a class="nav-link" href="{{ '/addClient' }}">{{ __('Cliente') }}</a>
 
-                            </div>
-                            <div class="navbar-drop">
-                                <a id="navbarDropdown" class="name_user" style="float: right" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
+                    </div>
 
-                                <div class="dropdown-content">
+                    <div class="navbar-drop">
+                        <a id="navbarDropdown" class="name_user" style="float: right" href="#" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
 
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
+                        <div class="dropdown-content">
+
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
+                                {{ __('Logout') }}
+                            </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </div>
 
-                            </div>
-                        @endguest
-                    </ul>
-                </div>
+                    </div>
+                @endguest
+            </ul>
+        </div>
 
 
-        </nav>
+    </nav>
 
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
+    <main class="py-4">
+        @yield('content')
+    </main>
+</div>
 </body>
 </html>

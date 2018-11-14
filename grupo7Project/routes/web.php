@@ -27,6 +27,9 @@ Route::post('/addProduct','ProductsController@addProduct')->name('products');
 Route::get('/addFornecedor','FornecedorController@index');
 Route::post('/addFornecedor','FornecedorController@addFornecedor')->name('fornecedor');
 
+//rota para os clientes
+
+Route::get('/addClient', 'CilentController@index');
 
 
 Route::get('/home', 'HomeController@index')->name('home');
