@@ -20,7 +20,8 @@ Route::get('/', function () {
 //rotas para os produtos
 Route::get('/addProduct','ProductsController@index');
 Route::post('/addProduct','ProductsController@addProduct')->name('products');
-
+Route::get('/addProduct/productDetails/{id}/edit','ProductsController@productDetails');
+Route::post('/addProduct/productDetails/{id}/edit', 'ProductsController@productDetailsUpdate');
 
 //Rota para os fonecedores
 

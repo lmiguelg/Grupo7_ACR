@@ -11,7 +11,7 @@ class ProductsController extends Controller
 {
     public function index(){
 
-        $products = DB::table('products')->get();
+        $products =Product::get();
 
         return view('vProducts.productList',compact('products'));
     }
@@ -22,23 +22,51 @@ class ProductsController extends Controller
         //Antes ver os produtos é necessário verificar o utilizador
         $product = new Product;
 
-        $product->name = $request->inProductName;
+        $product->name              = $request->inProductName;
 
-        $product->quantity = $request->inQuantity;
+        $product->quantity          = $request->inQuantity;
 
-        $product->expiration_date = $request->inExpirationDate;
+        $product->expiration_date   = $request->inExpirationDate;
 
-        $product->price = $request ->inProductPrice;
+        $product->price             = $request ->inProductPrice;
 
         $product->save();
 
-        $products = DB::table('products')->get();
+        $products                   = Product::get();
 
-        return response()->json(['success'=>$products]);
+        return response()->json(['success'=>$products,'error'=>"sdasdasd"]);
 
         //return redirect("/addProduct");
 
     }
-    //For Update product
-    //public function
+
+    // //Product details
+    public function productDetails($id){
+
+        $product = Product::find($id);
+
+        return view('vProducts.productDetails',compact('product'));
+    }
+
+    public function productDetailsUpdate(Request $request, $id){
+
+        $product                    = Product::find($id);
+
+        $inputs                     = $request->all();
+
+        $product->name              = $request->inName;
+
+        $product->quantity          = $request->inQuantity;
+
+        $product->expiration_date   = $request->inExpirationDate;
+
+        $product->price             = $request->inPrice;
+
+        $product->save();
+
+        //\Log::info($inputs);
+        //return redirect("/addProduct/productDetails/{$id}/edit");
+        return redirect("/addProduct");
+
+    }
 }

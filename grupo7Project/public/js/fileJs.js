@@ -31,7 +31,7 @@ $(document).ready(function(){
                 });
                 var lastElement = result[0][1][(result[0][1].length) - 1];
 
-                var test = $(".inventoryTable").append("<tr><td>"+lastElement.id+"</td><td>"+lastElement.name+"</td><td>"+lastElement.expiration_date+"</td><td>"+lastElement.quantity+"</td><td>"+lastElement.price+"</td><td>(Provider Name)</td></tr>");
+                var test = $(".inventoryTable").append("<tr><td>"+lastElement.id+"</td><td>"+lastElement.name+"</td><td>"+lastElement.expiration_date+"</td><td>"+lastElement.quantity+"</td><td>"+lastElement.price+"</td><td>(Provider Name)</td><td><a href="+"#"+">"+ "+" +"</a></td></tr>");
 
                 console.log(lastElement);
                 //$("#inventoryTable").find('tr:last').append();
@@ -81,11 +81,14 @@ $(document).ready(function(){
             });
 
             $('#formAddFornecedor')[0].reset();
+    });
+
+    //script to edit product
 
 
 
 
-    })
+
 });
 
 
