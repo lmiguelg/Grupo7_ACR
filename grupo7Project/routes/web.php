@@ -76,7 +76,7 @@ Route::post('editUser/{id}', function (Request $request, $id){
 } );
 
 
-
+Route::get('/home', 'HomeController@index')->name('home');
 
 //Route::get('/dashboard', 'FuncionarioController@__construct')->name('dashboard');
 
