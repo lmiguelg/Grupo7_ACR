@@ -56,6 +56,12 @@
                         <a class="nav-link" href="{{ '/addClient' }}">{{ __('Cliente') }}</a>
 
                     </div>
+                    <div class="nav-item">
+
+                        <a class="nav-link" href="{{ '/editUser' }}">{{ __('Utilizadores') }}</a>
+
+                    </div>
+
 
                     <div class="navbar-drop">
                         <a id="navbarDropdown" class="name_user" style="float: right" href="#" role="button"

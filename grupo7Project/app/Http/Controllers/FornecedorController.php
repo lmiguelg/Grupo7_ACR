@@ -41,4 +41,35 @@ class FornecedorController extends Controller
         //return redirect(route('fornecedor'));
 
     }
+
+
+    public function editFornecedor($id){
+
+        $entidadeFornecedor = Fornecedor::find($id);
+
+        return view('Fornecedores.edit', compact('entidadeFornecedor'));
+
+
+    }
+
+    public function updateFornecedor(Request $request, $id){
+
+
+        $entidadeFornecedor = Fornecedor::find($id);
+
+        $entidadeFornecedor->nome = $request->inFornecedorNome;
+
+        $entidadeFornecedor->nif =$request->inNIF;
+
+        $entidadeFornecedor->contacto = $request->inContacto;
+
+        $entidadeFornecedor->morada=$request->inMorada;
+
+        $entidadeFornecedor->save();
+
+        return redirect()->route('fornecedor');
+
+
+
+    }
 }
