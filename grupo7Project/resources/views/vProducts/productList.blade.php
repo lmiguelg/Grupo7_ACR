@@ -67,7 +67,7 @@
             <td>{{$product->quantity}}</td>
             <td>{{$product->price}}</td>
             <td>(Provider Name)</td>
-            <td><a href="{{ URL('/addProduct/productDetails/'.$product->id .'/edit')}}">+</a></td><!--vai redirecionar para o produto
+            <td><a href="" >+</a></td><!--vai redirecionar para o produto
                                         e vai ser possivel editá-lo-->
         </tr>
 
@@ -75,5 +75,8 @@
 
     </table>
 </div>
+
+
+
 
 @endsection
