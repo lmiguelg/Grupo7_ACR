@@ -36,6 +36,8 @@ Route::post('/addFornecedor/{id}', 'FornecedorController@updateFornecedor')->nam
 //rota para os clientes
 
 Route::get('/addClient', 'CilentController@index');
+Route::post('/addClient', 'CilentController@addClient')->name('client');
+
 
 //editar utilizadores
 
@@ -45,37 +47,12 @@ Route::get('/editUser', function (){
 
     return view('User.user',compact('utilizadores'));
 
-
-
 })->name('utilizadores');
 
-Route::get('/editUser/{id}', function ($id){
+Route::get('/editUser/{id}', 'Auth\RegisterController@editaFuncionario');
+Route::post('editUser/{id}', 'Auth\RegisterController@updateFuncionario' );
 
-  //  $funcionario=Auth::user()->DB::find($id);
-
-   $funcionario = Auth::user()->find($id);
-
-
-    return view('User.edit', compact('funcionario'));
-
-});
-Route::post('editUser/{id}', function (Request $request, $id){
-
-    $funcionario = Auth::user()->find($id);
-
-    $funcionario->name = $request->inFuncionarioNome;
-
-    $funcionario->email =$request->inEmail;
-
-    $funcionario->category = $request->inCategory;
-
-    $funcionario->save();
-
-    return redirect()->route('utilizadores');
-
-} );
-
-
+//
 Route::get('/home', 'HomeController@index')->name('home');
 
 //Route::get('/dashboard', 'FuncionarioController@__construct')->name('dashboard');

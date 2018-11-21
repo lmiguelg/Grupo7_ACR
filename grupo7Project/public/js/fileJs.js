@@ -72,7 +72,7 @@ $(document).ready(function(){
                     });
                     var lastElement = result[0][1][(result[0][1].length) - 1];
 
-                    var test = $(".FornecedorTable").append("<tr><td>"+lastElement.id+"</td><td>"+lastElement.name+"</td><td>"+lastElement.expiration_date+"</td><td>"+lastElement.quantity+"</td><td>"+lastElement.price+"</td><td>(Provider Name)</td></tr>");
+                    var test = $(".FornecedorTable").append("<tr><td>"+lastElement.id+"</td><td>"+lastElement.nome+"</td><td>"+lastElement.nif+"</td><td>"+lastElement.contacto+"</td><td>"+lastElement.morada+"</td><td>(Provider Name)</td></tr>");
 
                     console.log(lastElement);
 
@@ -82,6 +82,52 @@ $(document).ready(function(){
 
             $('#formAddFornecedor')[0].reset();
     });
+
+    $("#formAddClient").on('submit',function (e) {
+
+        e.preventDefault();
+
+        var inClientNome =$('input[name=inClientNome]').val();
+        var inNIF =$('input[name=inNIF]').val();
+        var inContacto =$('input[name=inContacto]').val();
+        var inMorada =$('input[name=inMorada]').val();
+        var inEmail =$('input[name=inEmail]').val();
+
+        $.ajax({
+
+            type:'POST',
+            url:'/addClient',
+
+            data:{
+
+                'inClientNome': inClientNome,
+                'inNIF': inNIF,
+                'inContacto': inContacto,
+                'inMorada' : inMorada,
+                'inEmail' : inEmail
+            },
+
+            datatype:'json',
+
+            success:function(data){
+
+                var result = Object.keys(data).map(function(key) {
+                    return [Number(key), data[key]];
+                });
+                var lastElement = result[0][1][(result[0][1].length) - 1];
+
+                var test = $(".ClientTable").append("<tr><td>"+lastElement.id+"</td><td>"+lastElement.nome+"</td><td>"+lastElement.nif+"</td><td>"+lastElement.contacto+"</td><td>"+lastElement.morada+"</td><td>"+lastElement.email+"</td><td>(Provider Name)</td></tr>");
+
+                console.log(lastElement);
+
+            }
+
+        });
+
+        $('#formAddClient')[0].reset();
+    });
+
+
 
     //script to edit product
 

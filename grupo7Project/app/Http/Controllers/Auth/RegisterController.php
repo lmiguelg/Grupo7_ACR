@@ -3,10 +3,14 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+
+
 
 class RegisterController extends Controller
 {
@@ -35,10 +39,11 @@ class RegisterController extends Controller
      *
      * @return void
      */
-    public function __construct()
+
+    /*  public function __construct()
     {
         $this->middleware('guest');
-    }
+    }*/
 
     /**
      * Get a validator for an incoming registration request.
@@ -58,26 +63,7 @@ class RegisterController extends Controller
     }
 
 
-  /*  public function validator(Request $request)
-    {
 
-        $this->validate(request(), [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:6', 'confirmed'],
-            'username' => ['required', 'unique:users'],
-            'category' => ['required']
-        ]);
-
-        $user = new User();
-        $user->name = $request['name'];
-        $user->email = $request['email'];
-        $user->password = $request['password'];
-        $user->username = $request['username'];
-        $user->category = $request['category'];
-
-        $user->save();
-    }*/
     /**
      * Create a new user instance after a valid registration.
      *
@@ -94,4 +80,34 @@ class RegisterController extends Controller
             'category' => $data['category']
         ]);
     }
+
+    public function editaFuncionario ($id){
+
+        //  $funcionario=Auth::user()->DB::find($id);
+
+        $funcionario = DB::table('users')->find($id);
+
+
+        return view('User.edit', compact('funcionario'));
+
+    }
+
+   public function updateFuncionario (Request $request, $id){
+
+        $funcionario =  DB::table('users')->find($id);
+
+        $funcionario->name = $request->inFuncionarioNome;
+
+        $funcionario->email =$request->inEmail;
+
+        $funcionario->category = $request->inCategory;
+
+        $funcionario->save();
+
+        return redirect()->route('utilizadores');
+
+    }
+
+
+
 }

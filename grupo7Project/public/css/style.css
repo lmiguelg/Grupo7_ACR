@@ -280,6 +280,80 @@ table.inventoryTable tr:nth-child(even) {
     color:white;
 }
 
+/*editar fornecedores*/
+.form-editFuncionario{
+
+    position: relative;
+    margin: 3% auto;
+    background: #ecf0f1;
+    width: 350px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 10px #333;
+    padding: 15px;
+
+
+}
+
+.form-editFuncionario .titulo{
+
+    text-align: center;
+    font-weight: 200;
+    font-size: 2em;
+    margin-top: 10px;
+    color: #34495e;
+    margin-bottom: 10px;
+
+}
+
+
+.form-editFuncionario .divColumnAddFornecedor{
+
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    width: 85%;
+    border: none;
+
+    font-size: 14px;
+}
+
+
+.form-editFuncionario #btnAddFuncionario{
+
+
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+
+    outline: 0;
+    background: #4CAF50;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    cursor: pointer;
+
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+
+}
+
+.form-editFuncionario .inFuncionario{
+
+    margin: auto;
+    margin-bottom: 10px;
+
+
+
+}
+
+.form-editFuncionario .formEdits{
+
+    text-align: center;
+
+
+
+}
 
 
 
