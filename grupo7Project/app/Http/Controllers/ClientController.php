@@ -9,7 +9,7 @@ use App\Fornecedor;
 use Symfony\Component\HttpKernel\Client;
 
 
-class CilentController extends Controller
+class ClientController extends Controller
 {
     //
     public function index(){
@@ -40,6 +40,20 @@ class CilentController extends Controller
        return response()->json(["success" =>$client ]);
 
         //return redirect(route('client'));
+
+    }
+
+    public function editClient($id){
+
+        $cliente = Clientes::find($id);
+
+        return view('Client.edit', compact('cliente'));
+    }
+
+    public function updateClient(Request $request, $id){
+
+        
+
 
     }
 

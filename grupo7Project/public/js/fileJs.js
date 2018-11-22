@@ -31,7 +31,7 @@ $(document).ready(function(){
                 });
                 var lastElement = result[0][1][(result[0][1].length) - 1];
 
-                var test = $(".inventoryTable").append("<tr><td>"+lastElement.id+"</td><td>"+lastElement.name+"</td><td>"+lastElement.expiration_date+"</td><td>"+lastElement.quantity+"</td><td>"+lastElement.price+"</td><td>(Provider Name)</td><td><a href="+"#"+">"+ "+" +"</a></td></tr>");
+                var test = $(".inventoryTable").append("<tr><td>"+lastElement.id+"</td><td>"+lastElement.name+"</td><td>"+lastElement.expiration_date+"</td><td>"+lastElement.quantity+"</td><td>"+lastElement.price+"</td><td>(Provider name)</td><td><a href="+"addProduct/productDetails/"+ lastElement.id+ "/edit"+ ">"+"Edita" +" </a></td></tr>");
 
                 console.log(lastElement);
                 //$("#inventoryTable").find('tr:last').append();
@@ -72,7 +72,7 @@ $(document).ready(function(){
                     });
                     var lastElement = result[0][1][(result[0][1].length) - 1];
 
-                    var test = $(".FornecedorTable").append("<tr><td>"+lastElement.id+"</td><td>"+lastElement.nome+"</td><td>"+lastElement.nif+"</td><td>"+lastElement.contacto+"</td><td>"+lastElement.morada+"</td><td>(Provider Name)</td></tr>");
+                    var test = $(".FornecedorTable").append("<tr><td>"+lastElement.id+"</td><td>"+lastElement.nome+"</td><td>"+lastElement.nif+"</td><td>"+lastElement.contacto+"</td><td>"+lastElement.morada+"</td><td><a href="+"addFornecedor/"+ lastElement.id+">"+ "Edita" +"</a></td></tr>");
 
                     console.log(lastElement);
 
@@ -116,7 +116,7 @@ $(document).ready(function(){
                 });
                 var lastElement = result[0][1][(result[0][1].length) - 1];
 
-                var test = $(".ClientTable").append("<tr><td>"+lastElement.id+"</td><td>"+lastElement.nome+"</td><td>"+lastElement.nif+"</td><td>"+lastElement.contacto+"</td><td>"+lastElement.morada+"</td><td>"+lastElement.email+"</td><td>(Provider Name)</td></tr>");
+                var test = $(".ClientTable").append("<tr><td>"+lastElement.id+"</td><td>"+lastElement.nome+"</td><td>"+lastElement.nif+"</td><td>"+lastElement.contacto+"</td><td>"+lastElement.morada+"</td><td>"+lastElement.email+"</td><td><a href="+"addClient/"+ lastElement.id+ ">"+"Edita "+"</a></td></tr>");
 
                 console.log(lastElement);
 

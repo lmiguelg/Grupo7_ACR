@@ -35,8 +35,10 @@ Route::post('/addFornecedor/{id}', 'FornecedorController@updateFornecedor')->nam
 
 //rota para os clientes
 
-Route::get('/addClient', 'CilentController@index');
-Route::post('/addClient', 'CilentController@addClient')->name('client');
+Route::get('/addClient', 'ClientController@index');
+Route::post('/addClient', 'ClientController@addClient')->name('client');
+
+Route::get('/addClient/{id}', 'ClientController@editClient');
 
 
 //editar utilizadores

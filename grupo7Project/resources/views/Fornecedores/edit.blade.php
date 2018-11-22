@@ -8,7 +8,7 @@
         <th>NIF</th>
         <th>contacto</th>
         <th>Morada</th>
-        <th>Edit</th>
+
 
 
             <tr>
