@@ -15,7 +15,7 @@
 
     <div class="divProductInfo">
         <label>Product Information </label>
-        <form class="formEditProduct" method="POST" action="{{ URL('/addProduct/productDetails/'.$product->id .'/edit')}}">
+        <form class="formEditProduct" method="POST"  enctype="multipart/form-data" action="{{ URL('/addProduct/productDetails/'.$product->id .'/edit')}}">
             <div class="formEditName">
                 <label>Name</label>
                 <input type="text" name="inName" value="{{$product->name}}" placeholder="{{$product->name}}">
@@ -43,6 +43,9 @@
                     <option>Provider 1</option>
                     <option>Provider 2</option>
                 </select>
+            </div>
+            <div class="formUploadImage">
+                <input type="file" name="inProduct_photo" title="Product Photo"><br><br>
             </div>
             <input type="hidden" id="myToken" name="_token" value="{{ csrf_token() }}">
             <input type="submit" value="Save changes" id="btnSubmitSaveProduct">

@@ -38,7 +38,7 @@
                         <a class="nav-link" href="{{ route('register') }}">{{ __('Registar') }}</a>
                     @endif
                 @else
-                    @if(Auth::user()->category == '')
+
                     <div class="nav-item">
                         @if (Route::has('register'))
                             <a class="nav-link" href="{{ route('register') }}">{{ __('Registar') }}</a>
