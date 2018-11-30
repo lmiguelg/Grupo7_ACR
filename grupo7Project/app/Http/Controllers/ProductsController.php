@@ -20,6 +20,7 @@ class ProductsController extends Controller
 
         \Log::info($request);
         //Antes ver os produtos é necessário verificar o utilizador
+
         $product = new Product;
 
         $product->name              = $request->inProductName;
@@ -28,7 +29,28 @@ class ProductsController extends Controller
 
         $product->expiration_date   = $request->inExpirationDate;
 
+
+        $product->filepath = "asdhdsh";
+
+
         $product->price             = $request ->inProductPrice;
+
+       /*for($i = 0; $i < 70; $i++){
+
+            $product = new Product;
+
+            $product->name              = "prod $i";
+
+            $product->quantity          = "$i";
+
+            $product->expiration_date   = "2018-11-23";
+
+            $product->filepath          = "sadasdiasdasgyudasd";
+
+            $product->price             = "$i";
+
+            $product->save();
+       }*/
 
         $product->save();
 
@@ -57,6 +79,13 @@ class ProductsController extends Controller
         $product->name              = $request->inName;
 
         $product->quantity          = $request->inQuantity;
+
+        //adicionar imagem
+        $file = $request->file('inProduct_photo');
+        $filename = time().'-'.$file->getClientOriginalName();
+        $file = $file->move('images/product_photos',$filename);
+        $product->filepath = $filename;
+
 
         $product->expiration_date   = $request->inExpirationDate;
 

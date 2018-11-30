@@ -37,8 +37,10 @@
 
                 @else
 
+
                     @switch(Auth::user()->category )
                     @case('admin')
+
                     <div class="nav-item">
 
                         @if (Route::has('register'))
