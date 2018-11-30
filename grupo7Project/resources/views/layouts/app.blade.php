@@ -34,12 +34,13 @@
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
                 @guest
-                    @if (Route::has('register'))
-                        <a class="nav-link" href="{{ route('register') }}">{{ __('Registar') }}</a>
-                    @endif
+
                 @else
-                    @if(Auth::user()->category == '')
+
+                    @switch(Auth::user()->category )
+                    @case('admin')
                     <div class="nav-item">
+
                         @if (Route::has('register'))
                             <a class="nav-link" href="{{ route('register') }}">{{ __('Registar') }}</a>
                         @endif
@@ -51,7 +52,7 @@
                     </div>
                     <div class="nav-item">
 
-                        <a class="nav-link" href="{{ route('fornecedor') }}">{{ __('Fornecedor') }}</a>
+                        <a class="nav-link" href="{{ route('fornecedor') }}">{{ __('Fornecedores') }}</a>
 
                     </div>
                     <div class="nav-item">
@@ -64,6 +65,52 @@
                         <a class="nav-link" href="{{ '/editUser' }}">{{ __('Utilizadores') }}</a>
 
                     </div>
+                        @break
+
+                    @case('armazem')
+
+                        <div class="nav-item">
+
+                            <a class="nav-link" href="{{ route('products') }}">{{ __('Produtos') }}</a>
+
+                        </div>
+                        <div class="nav-item">
+
+                            <a class="nav-link" href="{{ route('fornecedor') }}">{{ __('Fornecedor') }}</a>
+
+                        </div>
+
+                    @break
+
+                    @case('loja')
+
+                        <div class="nav-item">
+
+                            <a class="nav-link" href="{{ route('products') }}">{{ __('Produtos') }}</a>
+
+                        </div>
+
+                        <div class="nav-item">
+
+                            <a class="nav-link" href="{{ '/addClient' }}">{{ __('Cliente') }}</a>
+
+                        </div>
+
+
+                    @break
+
+                    @case('gestor')
+
+                        <div class="nav-item">
+
+                            <a class="nav-link" href="{{ route('fornecedor') }}">{{ __('Fornecedors') }}</a>
+
+                        </div>
+
+
+
+                    @break
+                @endswitch
 
 
                     <div class="navbar-drop">
@@ -86,6 +133,7 @@
                         </div>
 
                     </div>
+
                 @endguest
             </ul>
         </div>
