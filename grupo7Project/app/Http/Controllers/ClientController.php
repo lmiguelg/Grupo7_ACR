@@ -52,7 +52,7 @@ class ClientController extends Controller
 
     public function updateClient(Request $request, $id){
 
-        
+
 
 
     }
