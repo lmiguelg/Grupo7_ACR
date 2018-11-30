@@ -19,6 +19,7 @@ class CreateTableProducts extends Migration
             $table->date('expiration_date');
             $table->integer('quantity');
             $table->decimal('price');
+            $table->string('filepath');
             $table->timestamps();
         });
     }
