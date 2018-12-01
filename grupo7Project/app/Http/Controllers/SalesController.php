@@ -9,15 +9,14 @@ class SalesController extends Controller
 {
     //
 
-
-
     public function newSale(){
 
         $products = Product::get();
         $clients = Clientes::get();
-
-
-
         return view('vSales.createSale',compact('products','clients'));
+    }
+    public function newSaleAdd(){
+
+        return redirect('/newSale');;
     }
 }

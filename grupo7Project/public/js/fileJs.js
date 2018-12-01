@@ -129,10 +129,14 @@ $(document).ready(function(){
 
 
 
-    //script to edit product
-
-
-
+    //atualizar o cliente no DOM venda
+    if($.session.get('clientSelectedName')){
+        $('.pClient').html($.session.get('clientSelectedName'));
+    }
+    //atualizar produtos na venda
+    var products = JSON.parse($.session.get('arrayProducts'));
+    updateDOMSales(products);
+    total(products);
 
 
 });

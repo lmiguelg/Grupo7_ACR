@@ -4,11 +4,16 @@
 
     <div class="divNewSale verticalMenu">
         <div class="divAddedProducts">
-            <p class="withBorder">Products selected</p>
+            <p class="withBorder">Selected products</p>
+            <ul class="ulSalesList">
+
+            </ul>
 
         </div>
         <p class="withBorder goBottom">Client selected:</p>
+        <p class="pClient goBottom dataSales"></p>
         <p class="withBorder goBottom">Total: </p>
+        <p class="pTotal goBottom dataSales"></p>
 
     </div>
 
@@ -27,7 +32,8 @@
             <tr class="trSales">
                 <td>{{$client->nome}}</td>
                 <td>{{$client->nif}}</td>
-                <td><button>+</button></td>
+                <td><button onclick="addClientToSale('{{$client->nome}}','{{$client->id}}')">+</button></td>
+                <!--<td><a href="{{ route('salesAdd') }}"><input type="submit" value="+"></a></td>-->
             </tr>
         @endforeach
         </table>
@@ -49,17 +55,74 @@
             <tr class="trSales">
                 <td><img id="imgProduct" src="{{ URL::to('/') }}/images/product_photos/{{ $product->filepath }}"></td>
                 <td>{{$product->name}}</td>
-                <td><button>+</button></td>
+                <td><button onclick="addProductToSale('{{$product->name}}','{{$product->id}}','{{$product->price}}')">+</button></td>
             </tr>
         @endforeach
         </table>
     </div>
 
+<script>
 
 
 
+    function addClientToSale(name, id){
+        alert(name + id);
+
+        $.session.set('clientSelected', id);
+
+        $.session.set('clientSelectedName', name);
+
+        $('.pClient').html($.session.get('clientSelectedName'));
+
+    }
+
+    function addProductToSale(name, id, price){
+
+        alert(id + " "+name+" " +price);
+
+        var product = {id: id, name: name, price: price};//struct do produto para guardar na sessão
+
+        var products=[];
+
+        if($.session.get('arrayProducts')){
+
+            products = JSON.parse($.session.get('arrayProducts'));
+
+        }
+        products.push(product);
+
+        $.session.set('arrayProducts', JSON.stringify(products));
+
+
+        console.log("ultimo prod: " + JSON.stringify(product));
+
+        $('.ulSalesList').append("<li>"+products[products.length - 1].name+"<button class='btnDeleteProdSales'>X</button></li>");
+
+        total(products);
+
+
+    }
+
+    function updateDOMSales(products){
+
+        for(var i = 0; i < products.length; i++){
+            //nome
+            $('.ulSalesList').append("<li>"+products[i].name+"<button class='btnDeleteProdSales'>X</button></li>");
+
+        }
+    }
+
+    function total(products){
+        var total = 0;
+        for(var i = 0; i < products.length; i++){
+            total = total + parseFloat(products[i].price);
+        }
+        $.session.set("Total",total);
+        $('.pTotal').html(total);
+    }
 
 
 
+</script>
 
 @endsection

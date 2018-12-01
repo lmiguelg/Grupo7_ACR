@@ -134,6 +134,9 @@ input{
     position: relative;
     top:20vh;
 }
+.divNewSale .dataSales{
+    padding: 1px 7px 1px 20px;
+}
 
 .productListSales{
     width: 20%;
