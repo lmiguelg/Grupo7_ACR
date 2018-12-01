@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Clientes;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-use App\Fornecedor;
+use App\Fornecedores;
 use Symfony\Component\HttpKernel\Client;
 
 

@@ -19,7 +19,12 @@ class CreateTableProducts extends Migration
             $table->date('expiration_date');
             $table->integer('quantity');
             $table->decimal('price');
+
+            $table->integer('forncedor_id')->unsigned()->index();
+         $table->foreign('forncedor_id')->references('id')->on('fornecedors')->onDelete('cascade');
+
             $table->string('filepath');
+
             $table->timestamps();
         });
     }

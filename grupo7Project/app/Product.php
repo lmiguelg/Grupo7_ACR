@@ -8,9 +8,9 @@ class Product extends Model
 {
 
     //
-    public function products()
+    public function fornecedors()
     {
-        //return $this->hasMany('App\Product');
+        return $this->hasOne('App\Fornecedors');
     }
 
 }
