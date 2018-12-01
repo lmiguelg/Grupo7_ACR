@@ -51,6 +51,11 @@
                     </div>
                     <div class="nav-item">
 
+                        <a class="nav-link" href="{{ route('sales') }}">{{ __('Sales') }}</a>
+
+                    </div>
+                    <div class="nav-item">
+
                         <a class="nav-link" href="{{ route('fornecedor') }}">{{ __('Fornecedor') }}</a>
 
                     </div>

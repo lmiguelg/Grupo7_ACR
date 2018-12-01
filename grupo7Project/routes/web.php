@@ -24,6 +24,12 @@ Route::get('/addProduct','ProductsController@index');
 Route::post('/addProduct','ProductsController@addProduct')->name('products');
 Route::get('/addProduct/productDetails/{id}/edit','ProductsController@productDetails');
 Route::post('/addProduct/productDetails/{id}/edit', 'ProductsController@productDetailsUpdate');
+Route::get('/addProduct/productDetails/{id}/delete','ProductsController@productDelete');
+
+//rotas para vendas
+
+Route::get('/newSale','SalesController@newSale')->name('sales');
+
 
 //Rota para os fonecedores
 

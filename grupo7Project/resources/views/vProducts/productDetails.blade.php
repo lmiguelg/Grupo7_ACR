@@ -10,11 +10,14 @@
 <div>
 
     <div class="divImgProduct">
-        <img id="imgProduct">
+        <img id="imgProduct" src="{{ URL::to('/') }}/images/product_photos/{{ $product->filepath }}">
     </div>
 
+
+
+
     <div class="divProductInfo">
-        <label>Product Information </label>
+        <label id="prodInfo">Product Information </label>
         <form class="formEditProduct" method="POST"  enctype="multipart/form-data" action="{{ URL('/addProduct/productDetails/'.$product->id .'/edit')}}">
             <div class="formEditName">
                 <label>Name</label>
@@ -50,17 +53,26 @@
             <input type="hidden" id="myToken" name="_token" value="{{ csrf_token() }}">
             <input type="submit" value="Save changes" id="btnSubmitSaveProduct">
         </form>
-        <input type="button" value="Delete product" id="btnDeleteProduct">
+       <input type="button" value="Delete product" id="btnDeleteProduct" onclick="verifyDelete('{{$product->name}}')">
+
 
     </div>
 
 </div>
 
 
+<!--href="{{ URL('/addProduct/productDetails/'.$product->id .'/delete')}}"-->
 
 
+<script>
+function verifyDelete(element){
+    //só se for confirmado no alert é que é feito o redirect para o  delete
+    if(confirm("Do you want to delete "+ element+"?")){
+        window.location.href = "{{ URL('/addProduct/productDetails/'.$product->id .'/delete') }}";
+    }
+}
 
-
+</script>
 
 
 

@@ -81,10 +81,14 @@ class ProductsController extends Controller
         $product->quantity          = $request->inQuantity;
 
         //adicionar imagem
-        $file = $request->file('inProduct_photo');
-        $filename = time().'-'.$file->getClientOriginalName();
-        $file = $file->move('images/product_photos',$filename);
-        $product->filepath = $filename;
+
+        if($request->file('inProduct_photo') != null){
+            $file                       = $request->file('inProduct_photo');
+            $filename                   = time().'-'.$file->getClientOriginalName();
+            $file                       = $file->move('images/product_photos',$filename);
+            $product->filepath          = $filename;
+        }
+
 
 
         $product->expiration_date   = $request->inExpirationDate;
@@ -97,5 +101,11 @@ class ProductsController extends Controller
         //return redirect("/addProduct/productDetails/{$id}/edit");
         return redirect("/addProduct");
 
+    }
+    public function productDelete($id){
+        $product                    = Product::findOrFail($id);
+        $product->delete();
+
+        return redirect("/addProduct")->with('success','true');
     }
 }
