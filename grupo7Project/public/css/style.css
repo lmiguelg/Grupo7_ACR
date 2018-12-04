@@ -62,7 +62,7 @@ input{
 
 }
 
-.divColumnAddProduct #btnAddProduct{
+.btnGeral{
     display:inline-block;
     padding:0.35em 1.2em;
     border:0.1em solid #FFFFFF;
@@ -80,7 +80,7 @@ input{
 
     }
 
-    #btnAddProduct:hover {
+    .btnGeral:hover {
     color:#FFFFFF;
     background-color:#375ca7;
 }
@@ -158,6 +158,35 @@ input{
 .productListSales table tr td button{
     cursor: pointer !important;
 }
+.btnFinalizePurchase{
+    width:100%;
+}
+.ulSalesList{
+    align-content: center;
+
+}
+.ulSalesList{
+    margin-left: 20px;
+}
+
+.btnRemoveProductSale{
+    display:inline;
+    border:0.1em solid #FFFFFF;
+    border-radius:1px;
+    box-sizing: border-box;
+    text-decoration:Bold;
+    color:#FFFFFF;
+    text-align:center;
+    transition: all 0.2s;
+    background-color:#b81010;
+    margin-left:3%;
+}
+.btnRemoveProductSale:hover {
+    color:#FFFFFF;
+    background-color:#4e0101;
+    cursor:pointer;
+}
+
 
 /*fim de create new sale*/
 

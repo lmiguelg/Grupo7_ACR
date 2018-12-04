@@ -5,15 +5,21 @@
     <div class="divNewSale verticalMenu">
         <div class="divAddedProducts">
             <p class="withBorder">Selected products</p>
-            <ul class="ulSalesList">
+            <table class="ulSalesList">
+                <tr>
+                    <th class="">Product</th>
+                    <th class="">Remove</th>
+                </tr>
 
-            </ul>
+
+            </table>
 
         </div>
         <p class="withBorder goBottom">Client selected:</p>
         <p class="pClient goBottom dataSales"></p>
         <p class="withBorder goBottom">Total: </p>
         <p class="pTotal goBottom dataSales"></p>
+        <input type="button" class="goBottom btnFinalizePurchase btnGeral" value="FINALIZA PURCHASE">
 
     </div>
 
@@ -96,7 +102,7 @@
 
         console.log("ultimo prod: " + JSON.stringify(product));
 
-        $('.ulSalesList').append("<li>"+products[products.length - 1].name+"<button class='btnDeleteProdSales'>X</button></li>");
+        $('.ulSalesList').append("<tr><td class='tdSales'>"+products[products.length - 1].name+"</td><td><input type='button' value='X' class='btnRemoveProductSale'></td></tr>");
 
         total(products);
 
@@ -107,7 +113,9 @@
 
         for(var i = 0; i < products.length; i++){
             //nome
-            $('.ulSalesList').append("<li>"+products[i].name+"<button class='btnDeleteProdSales'>X</button></li>");
+
+            $('.ulSalesList').append("<tr><td class='tdSales'>"+products[i].name+"</td><td><input type='button' value='X' class='btnRemoveProductSale'></td></tr>");
+
 
         }
     }

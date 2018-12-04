@@ -34,7 +34,7 @@
 
 
         <div class="divColumnAddProduct">
-            <input type="submit" value="Add" id="btnAddProduct" >
+            <input type="submit" value="Add" id="btnAddProduct" class="btnGeral" >
         </div>
 
     </form>

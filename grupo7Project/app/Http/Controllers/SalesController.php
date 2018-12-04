@@ -17,6 +17,6 @@ class SalesController extends Controller
     }
     public function newSaleAdd(){
 
-        return redirect('/newSale');;
+        return redirect('/newSale');
     }
 }
