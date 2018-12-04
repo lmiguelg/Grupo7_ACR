@@ -2,18 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Fornecedors;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Product;
+
 
 class ProductsController extends Controller
 {
     public function index(){
 
         $products =Product::get();
+        $fornecedores = Fornecedors::get();
 
-        return view('vProducts.productList',compact('products'));
+        return view('vProducts.productList',compact('products', 'fornecedores'));
     }
 
     public function addProduct(Request $request){

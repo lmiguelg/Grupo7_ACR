@@ -12,7 +12,7 @@ class CreateTableProducts extends Migration
      * @return void
      */
     public function up()
-    {
+    {  Schema::disableForeignKeyConstraints();
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
@@ -20,8 +20,8 @@ class CreateTableProducts extends Migration
             $table->integer('quantity');
             $table->decimal('price');
 
-            $table->integer('forncedor_id')->unsigned()->index();
-         $table->foreign('forncedor_id')->references('id')->on('fornecedors')->onDelete('cascade');
+            $table->unsignedInteger('fornecedor_id');
+            $table->foreign('fornecedor_id')->references('id')->on('fornecedors')->onDelete('cascade');
 
             $table->string('filepath');
 

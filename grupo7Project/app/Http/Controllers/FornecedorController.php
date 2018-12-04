@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-use App\Fornecedores;
+use App\Fornecedors;
 
 
 class FornecedorController extends Controller
@@ -22,7 +22,7 @@ class FornecedorController extends Controller
 
     public function addFornecedor(Request $request){
 
-       $fornecedor= new Fornecedores();
+       $fornecedor= new Fornecedors();
 
         $fornecedor->nome = $request->inFornecedorNome;
 
@@ -45,7 +45,7 @@ class FornecedorController extends Controller
 
     public function editFornecedor($id){
 
-        $entidadeFornecedor = Fornecedores::find($id);
+        $entidadeFornecedor = Fornecedors::find($id);
 
         return view('Fornecedores.edit', compact('entidadeFornecedor'));
 
@@ -55,7 +55,7 @@ class FornecedorController extends Controller
     public function updateFornecedor(Request $request, $id){
 
 
-        $entidadeFornecedor = Fornecedores::find($id);
+        $entidadeFornecedor = Fornecedors::find($id);
 
         $entidadeFornecedor->nome = $request->inFornecedorNome;
 

@@ -30,6 +30,16 @@
             <input type="number" step="0.01" id="inProductPrice" name="inProductPrice" required>
         </div>
 
+        <div class="divColumnAddProduct">
+            <label>Fornecedor</label><br>
+            <select name="inFornecedor" required>
+                    @foreach($fornecedores as $fornecedor)
+                        <option value="{{$fornecedor->id}}">{{$fornecedor->name}}</option>
+                    @endforeach
+
+            </select>
+        </div>
+
         <input type="hidden" id="myToken" name="_token" value="{{ csrf_token() }}">
 
 
