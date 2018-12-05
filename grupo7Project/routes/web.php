@@ -39,6 +39,7 @@ Route::post('/addFornecedor','FornecedorController@addFornecedor')->name('fornec
 
 Route::get('/addFornecedor/{id}', 'FornecedorController@editFornecedor');
 Route::post('/addFornecedor/{id}', 'FornecedorController@updateFornecedor')->name('update');
+Route::get('/addFornecedor/{id}/delete', 'FornecedorController@fornecedorDelete');
 
 //rota para os clientes
 
