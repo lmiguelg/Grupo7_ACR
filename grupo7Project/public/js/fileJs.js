@@ -15,6 +15,9 @@ $(document).ready(function(){
             var inQuantity          = $('input[name=inQuantity]').val();
             var inExpirationDate    = $('input[name=inExpirationDate]').val();
             var inProductPrice      = $('input[name=inProductPrice]').val();
+        var inFornecedor            = $('select[name=inFornecedor]').val();
+
+        console.log(inFornecedor);
 
         $.ajax({
             type:'POST',
@@ -22,7 +25,9 @@ $(document).ready(function(){
             data: { 'inProductName':    inProductName,
                     'inQuantity':       inQuantity,
                     'inExpirationDate': inExpirationDate,
-                    'inProductPrice':   inProductPrice},
+                    'inProductPrice':   inProductPrice,
+                    'inFornecedor': inFornecedor
+            },
             success:function(data){
 
 
@@ -31,7 +36,7 @@ $(document).ready(function(){
                 });
                 var lastElement = result[0][1][(result[0][1].length) - 1];
 
-                var test = $(".inventoryTable").append("<tr><td>"+lastElement.id+"</td><td>"+lastElement.name+"</td><td>"+lastElement.expiration_date+"</td><td>"+lastElement.quantity+"</td><td>"+lastElement.price+"</td><td>(Provider name)</td><td><a href="+"addProduct/productDetails/"+ lastElement.id+ "/edit"+ ">"+"Edita" +" </a></td></tr>");
+                var test = $(".inventoryTable").append("<tr><td>"+lastElement.id+"</td><td>"+lastElement.name+"</td><td>"+lastElement.expiration_date+"</td><td>"+lastElement.quantity+"</td><td>"+lastElement.price+"</td><td>lastElement.fornecedor_id</td><td><a href="+"addProduct/productDetails/"+ lastElement.id+ "/edit"+ ">"+"Edita" +" </a></td></tr>");
 
                 console.log(lastElement);
                 //$("#inventoryTable").find('tr:last').append();
