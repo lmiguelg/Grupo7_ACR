@@ -16,6 +16,7 @@ class ProductsController extends Controller
         $products =Product::get();
         $fornecedores = Fornecedors::get();
 
+
         return view('vProducts.productList',compact('products', 'fornecedores'));
     }
 
