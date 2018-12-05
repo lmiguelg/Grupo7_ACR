@@ -15,6 +15,7 @@ class SalesController extends Controller
         $clients = Clientes::get();
         return view('vSales.createSale',compact('products','clients'));
     }
+
     public function newSaleAdd(){
 
         return redirect('/newSale');

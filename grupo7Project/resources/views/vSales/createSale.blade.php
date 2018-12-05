@@ -102,7 +102,8 @@
 
         console.log("ultimo prod: " + JSON.stringify(product));
 
-        $('.ulSalesList').append("<tr><td class='tdSales'>"+products[products.length - 1].name+"</td><td><input type='button' value='X' class='btnRemoveProductSale'></td></tr>");
+        $('.ulSalesList').append("<tr class='"+products[i].id +"'><td class='tdSales'>"+products[products.length - 1].name+
+        "</td><td><input type='button' value='X' class='btnRemoveProductSale' onclick='removeProduct("+id+")'></td></tr>");
 
         total(products);
 
@@ -113,10 +114,8 @@
 
         for(var i = 0; i < products.length; i++){
             //nome
-
-            $('.ulSalesList').append("<tr><td class='tdSales'>"+products[i].name+"</td><td><input type='button' value='X' class='btnRemoveProductSale'></td></tr>");
-
-
+            $('.ulSalesList').append("<tr class='"+products[i].id +"'><td class='tdSales'>"+products[i].name+
+            "</td><td><input type='button' value='X' class='btnRemoveProductSale' onclick='removeProduct("+products[i].id+")'></td></tr>");
         }
     }
 
@@ -127,6 +126,21 @@
         }
         $.session.set("Total",total);
         $('.pTotal').html(total);
+    }
+    function removeProduct(id){
+        console.log("poduto: " + id);
+        var idDoArray = 0;
+        $("."+id).css("background-color","#000000");
+        var products = JSON.parse($.session.get('arrayProducts'));
+        for(var i = 0;i<products.length;i++ ){
+            if(products[i].id == id){
+                products.pop(id);
+            }
+        }
+        console.log(products);
+
+
+
     }
 
 
