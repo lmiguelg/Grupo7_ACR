@@ -10,7 +10,7 @@ class Product extends Model
     //
     public function fornecedors()
     {
-        return $this->belongsTo('App\Fornecedors');
+        return $this->belongsTo('App\Fornecedors', 'fornecedor_id', 'id');
     }
 
 }

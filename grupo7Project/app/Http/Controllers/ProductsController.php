@@ -26,6 +26,7 @@ class ProductsController extends Controller
 
         $product = new Product;
 
+
         $product->name              = $request->inProductName;
 
         $product->quantity          = $request->inQuantity;
@@ -37,6 +38,11 @@ class ProductsController extends Controller
 
 
         $product->price             = $request ->inProductPrice;
+
+        $product->fornecedor_id     = $request->inFornecedor;
+
+        $fornecedor= Fornecedors::find($request->inFornecedor);
+
 
        /*for($i = 0; $i < 70; $i++){
 
@@ -55,7 +61,9 @@ class ProductsController extends Controller
             $product->save();
        }*/
 
+
         $product->save();
+        $product->fornecedors()->save($fornecedor);
 
         $products                   = Product::get();
 

@@ -34,7 +34,7 @@
             <label>Fornecedor</label><br>
             <select name="inFornecedor" required>
                     @foreach($fornecedores as $fornecedor)
-                        <option value="{{$fornecedor->id}}">{{$fornecedor->name}}</option>
+                        <option value="{{$fornecedor->id}}">{{$fornecedor->nome}}</option>
                     @endforeach
 
             </select>
