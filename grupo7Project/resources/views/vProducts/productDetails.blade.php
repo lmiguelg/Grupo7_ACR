@@ -41,12 +41,12 @@
             <br>
             <div class="formEditProvider">
                 <label>Fornecedor:</label>
-                <select>
+                <select name="inFornecedor">
                     @foreach($fornecedores as $fornecedor )
                         @if($fornecedor->id == $product->fornecedor_id)
-                    <option name="inFornecedor" value="{{$fornecedor->id}}" selected>{{$fornecedor->nome}}</option>
+                    <option value="{{$fornecedor->id}}" selected>{{$fornecedor->nome}}</option>
                         @else
-                    <option name="inFornecedor" value="{{$fornecedor->id}}" selected>{{$fornecedor->nome}}</option>
+                    <option value="{{$fornecedor->id}}" selected>{{$fornecedor->nome}}</option>
                         @endif
                     @endforeach
                 </select>
