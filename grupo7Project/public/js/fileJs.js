@@ -15,8 +15,9 @@ $(document).ready(function(){
             var inQuantity          = $('input[name=inQuantity]').val();
             var inExpirationDate    = $('input[name=inExpirationDate]').val();
             var inProductPrice      = $('input[name=inProductPrice]').val();
-        var inFornecedor            = $('select[name=inFornecedor]').val();
-
+            var inFornecedor        = $('select[name=inFornecedor]').val();
+            var inProduct_photo      = $('input[name=inProduct_photo]').val();
+            console.log(inProduct_photo);
         console.log(inFornecedor);
 
         $.ajax({
@@ -26,7 +27,8 @@ $(document).ready(function(){
                     'inQuantity':       inQuantity,
                     'inExpirationDate': inExpirationDate,
                     'inProductPrice':   inProductPrice,
-                    'inFornecedor': inFornecedor
+                    'inFornecedor': inFornecedor,
+                    'inProduct_photo':inProduct_photo
             },
             success:function(data){
 
@@ -34,9 +36,10 @@ $(document).ready(function(){
                 var result = Object.keys(data).map(function(key) {
                     return [Number(key), data[key]];
                 });
-                var lastElement = result[0][1][(result[0][1].length) - 1];
+                var lastElement = result[0][1][0][(result[0][1][0].length) - 1];
+                var lastElement2 = result[0][1][(result[0][1].length) - 1];
 
-                var test = $(".inventoryTable").append("<tr><td>"+lastElement.id+"</td><td>"+lastElement.name+"</td><td>"+lastElement.expiration_date+"</td><td>"+lastElement.quantity+"</td><td>"+lastElement.price+"</td><td>lastElement.fornecedor_id</td><td><a href="+"addProduct/productDetails/"+ lastElement.id+ "/edit"+ ">"+"Edita" +" </a></td></tr>");
+                var test = $(".inventoryTable").append("<tr><td>"+lastElement.id+"</td><td>"+lastElement.name+"</td><td>"+lastElement.expiration_date+"</td><td>"+lastElement.quantity+"</td><td>"+lastElement.price+"</td><td>"+lastElement2.nome+"</td><td><a href="+"addProduct/productDetails/"+ lastElement.id+ "/edit"+ ">"+"+" +" </a></td></tr>");
 
                 console.log(lastElement);
                 //$("#inventoryTable").find('tr:last').append();

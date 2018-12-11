@@ -32,12 +32,15 @@
 
         <div class="divColumnAddProduct">
             <label>Fornecedor</label><br>
-            <select name="inFornecedor" required>
+            <select class="divSelectGeral" name="inFornecedor" required>
                     @foreach($fornecedores as $fornecedor)
                         <option value="{{$fornecedor->id}}">{{$fornecedor->nome}}</option>
                     @endforeach
 
             </select>
+        </div>
+        <div class="formUploadImage">
+                <input type="file" name="inProduct_photo" title="Product Photo" ><br><br>
         </div>
 
         <input type="hidden" id="myToken" name="_token" value="{{ csrf_token() }}">
@@ -76,7 +79,11 @@
             <td>{{$product->expiration_date}}</td>
             <td>{{$product->quantity}}</td>
             <td>{{$product->price}}</td>
-            <td>(Provider Name)</td>
+            @foreach($fornecedores as $fornecedor)
+                @if($product->fornecedor_id == $fornecedor->id)
+                    <td>{{$fornecedor->nome}}</td>
+                @endif
+            @endforeach
             <td><a href="{{ URL('/addProduct/productDetails/'.$product->id .'/edit')}}">+</a></td><!--vai redirecionar para o produto
                                         e vai ser possivel editá-lo-->
         </tr>

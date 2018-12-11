@@ -34,13 +34,18 @@ class ProductsController extends Controller
 
         $product->expiration_date   = $request->inExpirationDate;
 
-
-        $product->filepath = "asdhdsh";
+        if($request->file('inProduct_photo') != null){
+            $file                       = $request->file('inProduct_photo');
+            $filename                   = time().'-'.$file->getClientOriginalName();
+            $file                       = $file->move('images/product_photos',$filename);
+            $product->filepath          = $filename;
+        }
 
 
         $product->price             = $request ->inProductPrice;
 
         $product->fornecedor_id     = $request->inFornecedor;
+
 
         $fornecedor= Fornecedors::find($request->inFornecedor);
 
@@ -64,11 +69,11 @@ class ProductsController extends Controller
 
 
         $product->save();
-        $product->fornecedors()->save($fornecedor);
+
 
         $products                   = Product::get();
 
-        return response()->json(['success'=>$products,'error'=>"sdasdasd"]);
+        return response()->json(['success'=>[$products,$fornecedor],'error'=>"sdasdasd"]);
 
         //return redirect("/addProduct");
 

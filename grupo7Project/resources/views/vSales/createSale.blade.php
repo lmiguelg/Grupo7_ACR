@@ -102,7 +102,7 @@
 
         console.log("ultimo prod: " + JSON.stringify(product));
 
-        $('.ulSalesList').append("<tr class='"+products[i].id +"'><td class='tdSales'>"+products[products.length - 1].name+
+        $('.ulSalesList').append("<tr class='"+product.id +"'><td class='tdSales'>"+products[products.length - 1].name+
         "</td><td><input type='button' value='X' class='btnRemoveProductSale' onclick='removeProduct("+id+")'></td></tr>");
 
         total(products);
@@ -130,20 +130,18 @@
     function removeProduct(id){
         console.log("poduto: " + id);
         var idDoArray = 0;
-        $("."+id).css("background-color","#000000");
+        $("."+id).remove();
         var products = JSON.parse($.session.get('arrayProducts'));
         for(var i = 0;i<products.length;i++ ){
             if(products[i].id == id){
                 products.pop(id);
             }
         }
+        $.session.set('arrayProducts', JSON.stringify(products));
+        total(products);
         console.log(products);
 
-
-
     }
-
-
 
 </script>
 
