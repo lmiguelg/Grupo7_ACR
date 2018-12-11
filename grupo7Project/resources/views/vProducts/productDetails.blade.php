@@ -40,11 +40,15 @@
             </div>
             <br>
             <div class="formEditProvider">
-                <label>Provider:</label>
+                <label>Fornecedor:</label>
                 <select>
-                    <option value="" disabled selected>Atual Provider</option>
-                    <option>Provider 1</option>
-                    <option>Provider 2</option>
+                    @foreach($fornecedores as $fornecedor )
+                        @if($fornecedor->id == $product->fornecedor_id)
+                    <option name="inFornecedor" value="{{$fornecedor->id}}" selected>{{$fornecedor->nome}}</option>
+                        @else
+                    <option name="inFornecedor" value="{{$fornecedor->id}}" selected>{{$fornecedor->nome}}</option>
+                        @endif
+                    @endforeach
                 </select>
             </div>
             <div class="formUploadImage">

@@ -83,8 +83,9 @@ class ProductsController extends Controller
     public function productDetails($id){
 
         $product = Product::find($id);
+        $fornecedores = Fornecedors::get();
 
-        return view('vProducts.productDetails',compact('product'));
+        return view('vProducts.productDetails',compact('product', 'fornecedores'));
     }
 
     public function productDetailsUpdate(Request $request, $id){
@@ -111,6 +112,8 @@ class ProductsController extends Controller
         $product->expiration_date   = $request->inExpirationDate;
 
         $product->price             = $request->inPrice;
+
+        $product->fornecedor_id     = $request->inFornecedor;
 
         $product->save();
 

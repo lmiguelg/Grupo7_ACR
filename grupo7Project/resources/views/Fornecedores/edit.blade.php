@@ -52,6 +52,10 @@
         </div>
 
 
+
+
     </form>
+
+    <a href="/addFornecedor/{{$entidadeFornecedor->id}}/delete" onclick="verifica">Delete</a>
 </div>
 @endsection

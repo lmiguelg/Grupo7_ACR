@@ -72,4 +72,12 @@ class FornecedorController extends Controller
 
 
     }
+
+    public function fornecedorDelete($id){
+
+        $fornecedor                    = Fornecedors::findOrFail($id);
+        $fornecedor->delete();
+
+        return redirect("/addFornecedor")->with('success','true');
+}
 }

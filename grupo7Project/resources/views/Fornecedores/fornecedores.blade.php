@@ -57,7 +57,8 @@
                         <td>{{$fornecedor->nif}}</td>
                         <td>{{$fornecedor->contacto}}</td>
                         <td>{{$fornecedor->morada}}</td>
-                        <td><a href="addFornecedor/{{ $fornecedor->id }}">Edita</a></td><!--vai redirecionar para o produto
+                        <td><a href="addFornecedor/{{ $fornecedor->id }}">Edita</a>
+                        </td><!--vai redirecionar para o produto
                                         e vai ser possivel editá-lo-->
 
                     </tr>
@@ -66,6 +67,8 @@
 
             </table>
         </div>
+
+
 
 
 
