@@ -11,12 +11,16 @@ use App\Product;
 
 class ProductsController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
 
-        $products =Product::get();
+        $products =DB::table('products')->paginate(10);
+
+
         $fornecedores = Fornecedors::get();
 
-
+        if ($request->ajax()) {
+            return view('vProducts.productListTable',compact('products', 'fornecedores'))->render();
+        }
         return view('vProducts.productList',compact('products', 'fornecedores'));
     }
 

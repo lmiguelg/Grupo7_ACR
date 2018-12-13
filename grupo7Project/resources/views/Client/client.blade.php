@@ -80,6 +80,8 @@
                 @endforeach
 
             </table>
+
+            {{$clients -> links()}}
         </div>
 
 

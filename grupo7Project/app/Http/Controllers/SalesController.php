@@ -5,6 +5,7 @@ use App\Product;
 use App\Clientes;
 use Illuminate\Http\Request;
 
+
 class SalesController extends Controller
 {
     //
@@ -16,8 +17,6 @@ class SalesController extends Controller
         return view('vSales.createSale',compact('products','clients'));
     }
 
-    public function newSaleAdd(){
 
-        return redirect('/newSale');
-    }
+
 }

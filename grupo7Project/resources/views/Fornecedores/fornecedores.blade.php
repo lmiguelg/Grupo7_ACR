@@ -1,4 +1,5 @@
 @extends('layouts.app')
+
 @section('content')
 
 
@@ -66,6 +67,8 @@
                 @endforeach
 
             </table>
+
+            {{  $fornecedores->links() }}
         </div>
 
 

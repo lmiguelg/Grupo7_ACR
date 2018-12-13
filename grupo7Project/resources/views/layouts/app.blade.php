@@ -9,14 +9,16 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/fileJs.js') }}" defer></script>
     <script src="{{ asset('js/session.js') }}" defer></script>
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-
-    <!-- Styles -->
+       <!-- Styles -->
 
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
@@ -73,6 +75,12 @@
                         <a class="nav-link" href="{{ '/editUser' }}">{{ __('Utilizadores') }}</a>
 
                     </div>
+
+                        <div class="nav-item">
+
+                            <a class="nav-link" href="{{ '/gcalendar'}}">{{ __('Calendario') }}</a>
+
+                        </div>
                         @break
 
                     @case('armazem')
