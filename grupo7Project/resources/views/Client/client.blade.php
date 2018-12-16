@@ -53,42 +53,31 @@
 
             </form>
         </div>
-
-        <div class="ClientList">
-            <table class="ClientTable" id="ClientTable">
-                <th>Id</th>
-                <th>Nome</th>
-                <th>NIF</th>
-                <th>contacto</th>
-                <th>Morada</th>
-                <th>Email</th>
-                <th>Edit</th>
-
-                @foreach($clients as $client)
-                    <tr>
-                        <td>{{$client->id}}</td>
-                        <td>{{$client->nome}}</td>
-                        <td>{{$client->nif}}</td>
-                        <td>{{$client->contacto}}</td>
-                        <td>{{$client->morada}}</td>
-                        <td>{{$client->email}}</td>
-                        <td><a href="addClient/{{ $client->id }}">Edita</a></td><!--vai redirecionar para o produto
-                                        e vai ser possivel editá-lo-->
-
-                    </tr>
-
-                @endforeach
-
-            </table>
-
-            {{$clients -> links()}}
-        </div>
-
-
     </div>
+        <section class="ClientList">
+            @include('Client.clientList')
+        </section>
 
+        <script type="text/javascript">
 
+            $(function() {
+                $('body').on('click', '.pagination a', function(e) {
+                    e.preventDefault();
+                    var url = $(this).attr('href');
+                    getArticles(url);
+                    window.history.pushState("", "", url);
+                });
 
-
+                function getArticles(url) {
+                    $.ajax({
+                        url : url
+                    }).done(function (data) {
+                        $('.ClientList').html(data);
+                    }).fail(function () {
+                        alert('Articles could not be loaded.');
+                    });
+                }
+            });
+        </script>
 
 @endsection
