@@ -1,6 +1,6 @@
 
 @extends('layouts.app')
-@section('content2')
+@section('content')
 
 
 <h1>Inventory</h1>

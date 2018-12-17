@@ -29,7 +29,7 @@ Route::get('/addProduct/productDetails/{id}/delete','ProductsController@productD
 //rotas para vendas
 
 Route::get('/newSale','SalesController@newSale')->name('sales');
-Route::get('/newSale','SalesController@addNewSale');
+//Route::get('/newSale','SalesController@addNewSale');
 Route::post('/sales/list','SalesController@addNewSale')->name('salesAdd');
 
 

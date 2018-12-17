@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('content_sales')
+@section('content')
     <h1>Create new Sale</h1>
 
     <div class="divNewSale verticalMenu">

@@ -57,7 +57,7 @@
                     </div>
                     <div class="nav-item">
 
-                        <a class="nav-link" href="{{ route('sales') }}">{{ __('Sales') }}</a>
+                        <a class="nav-link" href="{{ 'newSale ' }}">{{ __('Sales') }}</a>
 
                     </div>
                     <div class="nav-item">
@@ -164,13 +164,8 @@
 
     <main class="py-4">
 
-        @yield('content2')
-        @yield('contentProductDetails')
-        @yield('content_sales')
-        @yield('content_editFornecedores')
-        @yield('content_fornecedores')
-        @yield('content_cliente')
-        @yield('content_editCliente')
+        @yield('content')
+
     </main>
 </div>
 </body>

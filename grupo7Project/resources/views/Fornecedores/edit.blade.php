@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('content_editFornecedores')
+@section('content')
 
 
     <table class="FornecedorTable" id="FornecedorTable">

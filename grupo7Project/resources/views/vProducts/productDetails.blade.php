@@ -1,6 +1,6 @@
 
 @extends('vProducts.sidebar')
-@section('contentProductDetails')
+@section('content')
 
 <!--dados passa através do controller na função compact-->
 
