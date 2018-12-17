@@ -46,13 +46,13 @@
                         @if($fornecedor->id == $product->fornecedor_id)
                     <option value="{{$fornecedor->id}}" selected>{{$fornecedor->nome}}</option>
                         @else
-                    <option value="{{$fornecedor->id}}" selected>{{$fornecedor->nome}}</option>
+                    <option value="{{$fornecedor->id}}" >{{$fornecedor->nome}}</option>
                         @endif
                     @endforeach
                 </select>
             </div>
             <div class="formUploadImage">
-                <input type="file" name="inProduct_photo" title="Product Photo"><br><br>
+                <input type="file" id="testUpload"name="inProduct_photo" title="Product Photo"><br><br>
             </div>
             <input type="hidden" id="myToken" name="_token" value="{{ csrf_token() }}">
             <input type="submit" value="Save changes" id="btnSubmitSaveProduct">
@@ -69,6 +69,7 @@
 
 
 <script>
+
 function verifyDelete(element){
     //só se for confirmado no alert é que é feito o redirect para o  delete
     if(confirm("Do you want to delete "+ element+"?")){

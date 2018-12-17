@@ -163,7 +163,14 @@
     </nav>
 
     <main class="py-4">
-        @yield('content')
+
+        @yield('content2')
+        @yield('contentProductDetails')
+        @yield('content_sales')
+        @yield('content_editFornecedores')
+        @yield('content_fornecedores')
+        @yield('content_cliente')
+        @yield('content_editCliente')
     </main>
 </div>
 </body>
