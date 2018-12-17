@@ -14,11 +14,10 @@ class CrateSalesItemTable extends Migration
      */
     public function up()
     {
-        Schema::create('salesItem', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('sales_Item', function (Blueprint $table) {
             $table->unsignedInteger('product_id');
-            $table->unsignedInteger('sale_id');
-            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+            $table->unsignedInteger('sale_id')->index();
+            $table->foreign('product_id')->references('id')->on('products');
             $table->foreign('sale_id')->references('id')->on('sales')->onDelete('cascade');
             $table->timestamps();
         });
@@ -31,6 +30,6 @@ class CrateSalesItemTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('salesItem');
+        Schema::dropIfExists('sales_Item');
     }
 }

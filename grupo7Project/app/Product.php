@@ -13,4 +13,9 @@ class Product extends Model
         return $this->belongsTo('App\Fornecedors', 'fornecedor_id', 'id');
     }
 
+    public function sale(){
+
+
+    }
+
 }

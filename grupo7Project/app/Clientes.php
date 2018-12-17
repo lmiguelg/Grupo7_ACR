@@ -10,4 +10,12 @@ class Clientes extends Model
     {
         return $this->hasMany('App\Clientes');
     }
+
+    public function sale(){
+
+        return $this->hasMany('App\Sale', 'cliente_id');
+    }
+
+
+
 }
