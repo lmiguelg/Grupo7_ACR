@@ -1,5 +1,5 @@
 
-@extends('vProducts.sidebar')
+@extends('layouts.app')
 @section('content2')
 
 
@@ -40,7 +40,7 @@
             </select>
         </div>
         <div class="formUploadImage">
-                <input type="file" name="inProduct_photo" title="Product Photo" ><br><br>
+                <input type="file" name="inProduct_photoAddNew" title="Product Photo" ><br><br>
         </div>
 
         <input type="hidden" id="myToken" name="_token" value="{{ csrf_token() }}">

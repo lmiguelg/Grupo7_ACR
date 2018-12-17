@@ -16,9 +16,9 @@ $(document).ready(function(){
             var inExpirationDate    = $('input[name=inExpirationDate]').val();
             var inProductPrice      = $('input[name=inProductPrice]').val();
             var inFornecedor        = $('select[name=inFornecedor]').val();
-            var inProduct_photo      = $('input[name=inProduct_photo]').val();
-            console.log(inProduct_photo);
-        console.log(inFornecedor);
+            var inProduct_photoAddNew     = $('input[name=inProduct_photoAddNew]').val();
+            //console.log(inProduct_photo);
+
 
         $.ajax({
             type:'POST',
@@ -28,7 +28,7 @@ $(document).ready(function(){
                     'inExpirationDate': inExpirationDate,
                     'inProductPrice':   inProductPrice,
                     'inFornecedor': inFornecedor,
-                    'inProduct_photo':inProduct_photo
+                    'inProduct_photoAddNew':inProduct_photoAddNew
             },
             success:function(data){
 

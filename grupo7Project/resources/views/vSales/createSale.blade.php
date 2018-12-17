@@ -1,8 +1,9 @@
 @extends('layouts.app')
-@section('content')
+@section('content_sales')
     <h1>Create new Sale</h1>
 
     <div class="divNewSale verticalMenu">
+    <form id="formSale" method="POST">
         <div class="divAddedProducts">
             <p class="withBorder">Selected products</p>
             <table class="ulSalesList">
@@ -19,8 +20,8 @@
         <p class="pClient goBottom dataSales"></p>
         <p class="withBorder goBottom">Total: </p>
         <p class="pTotal goBottom dataSales"></p>
-        <input type="button" class="goBottom btnFinalizePurchase btnGeral" value="FINALIZA PURCHASE">
-
+        <input type="submit" id="btnSubmitSale" class="goBottom btnFinalizePurchase btnGeral" value="FINALIZA COMPRA">
+        </form>
     </div>
 
     <div class="productListSales verticalMenu">
@@ -65,9 +66,45 @@
             </tr>
         @endforeach
         </table>
+
     </div>
 
 <script>
+
+    $("#formSale").on('submit',function (e) {
+        e.preventDefault();
+        var client_id = $.session.get('clientSelected');
+        var productList = JSON.parse($.session.get('arrayProducts'));
+
+        $.ajax({
+
+            type:'GET',
+            url:'/newSale',
+
+            data:{
+
+                'client_id': client_id,
+                'productList': productList
+            },
+
+            datatype:'json',
+
+            success:function(data){
+
+                console.log(data);
+            }
+        });
+
+
+        console.log(productList);
+        console.log(client_id);
+
+    });
+
+
+
+
+
 
 
 

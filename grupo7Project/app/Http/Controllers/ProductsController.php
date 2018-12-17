@@ -27,15 +27,14 @@ class ProductsController extends Controller
 
         $product = new Product;
 
-
         $product->name              = $request->inProductName;
 
         $product->quantity          = $request->inQuantity;
 
         $product->expiration_date   = $request->inExpirationDate;
 
-        if($request->file('inProduct_photo') != null){
-            $file                       = $request->file('inProduct_photo');
+        if($request->file('inProduct_photoAddNew') != null){
+            $file                       = $request->file('inProduct_photoAddNew');
             $filename                   = time().'-'.$file->getClientOriginalName();
             $file                       = $file->move('images/product_photos',$filename);
             $product->filepath          = $filename;
