@@ -6,6 +6,7 @@ use App\Clientes;
 use App\Sale;
 use Illuminate\Http\Request;
 
+
 class SalesController extends Controller
 {
     //
@@ -23,4 +24,5 @@ class SalesController extends Controller
         return response()->json(['success'=>["venda adicionada"]]);
         return view('vSales.createSale',compact('products','clients'));
     }
+
 }

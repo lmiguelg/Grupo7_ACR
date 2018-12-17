@@ -67,6 +67,10 @@ Route::post('editUser/{id}', 'Auth\RegisterController@updateFuncionario' );
 //
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+Route::resource('/gcalendar', 'gCalendarController');
+Route::get('/oauth',  'gCalendarController@oauth')->name('oauth');
+
 //Route::get('/dashboard', 'FuncionarioController@__construct')->name('dashboard');
 
 //Route::post('/dashboard', 'FuncionarioController@registoValidate');

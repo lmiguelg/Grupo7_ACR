@@ -1,4 +1,6 @@
 
+
+
 $(document).ready(function(){
     var token   = $("#myToken").val();
 
@@ -142,12 +144,15 @@ $(document).ready(function(){
         $('.pClient').html($.session.get('clientSelectedName'));
     }
     //atualizar produtos na venda
-    var products = JSON.parse($.session.get('arrayProducts'));
+  var products = JSON.parse($.session.get('arrayProducts'));
     updateDOMSales(products);
     total(products);
 
 
+
 });
+
+
 
 
 

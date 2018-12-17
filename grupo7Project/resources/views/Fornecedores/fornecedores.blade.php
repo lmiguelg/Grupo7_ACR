@@ -2,6 +2,7 @@
 @section('content_fornecedores')
 
 
+
     <h1>Fornecedores</h1>
 
     <div class="container">
@@ -41,34 +42,31 @@
     </div>
 
 
-        <div class="FornecedorList">
-            <table class="FornecedorTable" id="FornecedorTable">
-                <th>Id</th>
-                <th>Nome</th>
-                <th>NIF</th>
-                <th>contacto</th>
-                <th>Morada</th>
-                <th>Edit</th>
+    <section class="fornecedoresList">
+        @include('Fornecedores.fornecedoresList')
+    </section>
 
-                @foreach($fornecedores as $fornecedor)
-                    <tr>
-                        <td>{{$fornecedor->id}}</td>
-                        <td>{{$fornecedor->nome}}</td>
-                        <td>{{$fornecedor->nif}}</td>
-                        <td>{{$fornecedor->contacto}}</td>
-                        <td>{{$fornecedor->morada}}</td>
-                        <td><a href="addFornecedor/{{ $fornecedor->id }}">Edita</a>
-                        </td><!--vai redirecionar para o produto
-                                        e vai ser possivel editá-lo-->
+    <script type="text/javascript">
 
-                    </tr>
+        $(function() {
+            $('body').on('click', '.pagination a', function(e) {
+                e.preventDefault();
+                var url = $(this).attr('href');
+                getArticles(url);
+                window.history.pushState("", "", url);
+            });
 
-                @endforeach
-
-            </table>
-        </div>
-
-
+            function getArticles(url) {
+                $.ajax({
+                    url : url
+                }).done(function (data) {
+                    $('.fornecedoresList').html(data);
+                }).fail(function () {
+                    alert('Articles could not be loaded.');
+                });
+            }
+        });
+    </script>
 
 
 
