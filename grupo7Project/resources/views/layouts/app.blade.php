@@ -9,16 +9,14 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/fileJs.js') }}" defer></script>
     <script src="{{ asset('js/session.js') }}" defer></script>
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-       <!-- Styles -->
+
+    <!-- Styles -->
 
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
@@ -42,48 +40,42 @@
 
 
                     @switch(Auth::user()->category )
-                    @case('admin')
-
-                    <div class="nav-item">
-
-                        @if (Route::has('register'))
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Registar') }}</a>
-                        @endif
-                    </div>
-                    <div class="nav-item">
-
-                        <a class="nav-link" href="{{ route('products') }}">{{ __('Produtos') }}</a>
-
-                    </div>
-                    <div class="nav-item">
-
-                        <a class="nav-link" href="{{ route('sales') }}">{{ __('Sales') }}</a>
-
-                    </div>
-                    <div class="nav-item">
-
-                        <a class="nav-link" href="{{ route('fornecedor') }}">{{ __('Fornecedor') }}</a>
-
-                    </div>
-                    <div class="nav-item">
-
-                        <a class="nav-link" href="{{ '/addClient' }}">{{ __('Cliente') }}</a>
-
-                    </div>
-                    <div class="nav-item">
-
-                        <a class="nav-link" href="{{ '/editUser' }}">{{ __('Utilizadores') }}</a>
-
-                    </div>
+                        @case('admin')
 
                         <div class="nav-item">
 
-                            <a class="nav-link" href="{{ '/gcalendar'}}">{{ __('Calendario') }}</a>
+                            @if (Route::has('register'))
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('Registar') }}</a>
+                            @endif
+                        </div>
+                        <div class="nav-item">
+
+                            <a class="nav-link" href="{{ route('products') }}">{{ __('Produtos') }}</a>
+
+                        </div>
+                        <div class="nav-item">
+
+                            <a class="nav-link" href="{{ '/newSales' }}">{{ __('Sales') }}</a>
+
+                        </div>
+                        <div class="nav-item">
+
+                            <a class="nav-link" href="{{ route('fornecedor') }}">{{ __('Fornecedor') }}</a>
+
+                        </div>
+                        <div class="nav-item">
+
+                            <a class="nav-link" href="{{ '/addClient' }}">{{ __('Cliente') }}</a>
+
+                        </div>
+                        <div class="nav-item">
+
+                            <a class="nav-link" href="{{ '/editUser' }}">{{ __('Utilizadores') }}</a>
 
                         </div>
                         @break
 
-                    @case('armazem')
+                        @case('armazem')
 
                         <div class="nav-item">
 
@@ -96,9 +88,9 @@
 
                         </div>
 
-                    @break
+                        @break
 
-                    @case('loja')
+                        @case('loja')
 
                         <div class="nav-item">
 
@@ -118,9 +110,9 @@
                         </div>
 
 
-                    @break
+                        @break
 
-                    @case('gestor')
+                        @case('gestor')
 
                         <div class="nav-item">
 
@@ -130,8 +122,8 @@
 
 
 
-                    @break
-                @endswitch
+                        @break
+                    @endswitch
 
 
                     <div class="navbar-drop">
@@ -163,14 +155,7 @@
     </nav>
 
     <main class="py-4">
-
-        @yield('content2')
-        @yield('contentProductDetails')
-        @yield('content_sales')
-        @yield('content_editFornecedores')
-        @yield('content_fornecedores')
-        @yield('content_cliente')
-        @yield('content_editCliente')
+        @yield('content')
     </main>
 </div>
 </body>

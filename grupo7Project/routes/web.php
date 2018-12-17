@@ -12,6 +12,8 @@
 */
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\DB;
+
 Auth::routes();
 
 Route::get('/', function () {
@@ -53,13 +55,7 @@ Route::get('/addClient/{id}', 'ClientController@editClient');
 
 //editar utilizadores
 
-Route::get('/editUser', function (){
-
-    $utilizadores = DB::table('users')->get();
-
-    return view('User.user',compact('utilizadores'));
-
-})->name('utilizadores');
+Route::get('/editUser', 'Auth\RegisterController@indice')->name('utilizadores');
 
 Route::get('/editUser/{id}', 'Auth\RegisterController@editaFuncionario');
 Route::post('editUser/{id}', 'Auth\RegisterController@updateFuncionario' );

@@ -81,6 +81,14 @@ class RegisterController extends Controller
         ]);
     }
 
+    public function indice ()
+    {
+
+        $utilizadores = DB::table('users')->get();
+
+        return view('User.user', compact('utilizadores'));
+    }
+
     public function editaFuncionario ($id){
 
         //  $funcionario=Auth::user()->DB::find($id);
