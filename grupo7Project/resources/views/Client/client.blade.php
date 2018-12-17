@@ -1,7 +1,7 @@
 
 
 @extends('layouts.app')
-@section('content_cliente')
+@section('content')
 
     <div class="ClientList">
         <table class="ClientTable" id="ClientTable">

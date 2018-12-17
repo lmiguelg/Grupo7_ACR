@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
-@section('content_fornecedores')
+
+@section('content')
+
+
 
 
 

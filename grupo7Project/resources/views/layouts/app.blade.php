@@ -47,8 +47,10 @@
                             @if (Route::has('register'))
                                 <a class="nav-link" href="{{ route('register') }}">{{ __('Registar') }}</a>
                             @endif
+
                         </div>
                         <div class="nav-item">
+
 
                             <a class="nav-link" href="{{ route('products') }}">{{ __('Produtos') }}</a>
 
@@ -155,7 +157,10 @@
     </nav>
 
     <main class="py-4">
+
+
         @yield('content')
+
     </main>
 </div>
 </body>
