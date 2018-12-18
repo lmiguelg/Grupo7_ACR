@@ -19,6 +19,7 @@ class CrateSalesItemTable extends Migration
             $table->unsignedInteger('sale_id')->index();
             $table->foreign('product_id')->references('id')->on('products');
             $table->foreign('sale_id')->references('id')->on('sales')->onDelete('cascade');
+            $table->integer('quantidade');
             $table->timestamps();
         });
     }

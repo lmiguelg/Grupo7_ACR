@@ -20,7 +20,7 @@
         <p class="pClient goBottom dataSales"></p>
         <p class="withBorder goBottom">Total: </p>
         <p class="pTotal goBottom dataSales"></p>
-        <input type="submit" id="btnSubmitSale" class="goBottom btnFinalizePurchase btnGeral" value="FINALIZA COMPRA">
+        <input type="submit" id="btnSubmitSale" class="goBottom btnFinalizePurchase btnGeral" value="Finaliza Compra">
         </form>
     </div>
 
@@ -78,7 +78,7 @@
 
         $.ajax({
 
-            type:'GET',
+            type:'POST',
             url:'/newSale',
 
             data:{
