@@ -47,7 +47,6 @@ $(document).ready(function(){
                 //$("#inventoryTable").find('tr:last').append();
             }
         });
-        $("#formAddProduct")[0].reset();
 
     });
 
@@ -90,7 +89,9 @@ $(document).ready(function(){
 
             });
 
-            $('#formAddFornecedor')[0].reset();
+
+// Adds single row to spreadsheet
+
     });
 
     $("#formAddClient").on('submit',function (e) {
