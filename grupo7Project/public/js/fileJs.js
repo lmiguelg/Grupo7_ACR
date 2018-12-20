@@ -1,4 +1,4 @@
-
+    
 
 
 $(document).ready(function(){
@@ -55,39 +55,39 @@ $(document).ready(function(){
 
         e.preventDefault();
 
-            var inFornecedorNome =$('input[name=inFornecedorNome]').val();
-             var inNIF =$('input[name=inNIF]').val();
-            var inContacto =$('input[name=inContacto]').val();
-            var inMorada =$('input[name=inMorada]').val();
+        var inFornecedorNome =$('input[name=inFornecedorNome]').val();
+        var inNIF =$('input[name=inNIF]').val();
+        var inContacto =$('input[name=inContacto]').val();
+        var inMorada =$('input[name=inMorada]').val();
 
 
-            $.ajax({
+        $.ajax({
 
-                type:'POST',
-                url:'/addFornecedor',
-                data:{
+            type:'POST',
+            url:'/addFornecedor',
+            data:{
 
-                    'inFornecedorNome': inFornecedorNome,
-                    'inNIF': inNIF,
-                    'inContacto': inContacto,
-                    'inMorada' : inMorada
-                },
-                datatype:'json',
+                'inFornecedorNome': inFornecedorNome,
+                'inNIF': inNIF,
+                'inContacto': inContacto,
+                'inMorada' : inMorada
+            },
+            datatype:'json',
 
-                success:function(data){
+            success:function(data){
 
-                    var result = Object.keys(data).map(function(key) {
-                        return [Number(key), data[key]];
-                    });
-                    var lastElement = result[0][1][(result[0][1].length) - 1];
+                var result = Object.keys(data).map(function(key) {
+                    return [Number(key), data[key]];
+                });
+                var lastElement = result[0][1][(result[0][1].length) - 1];
 
-                    var test = $(".FornecedorTable").append("<tr><td>"+lastElement.id+"</td><td>"+lastElement.nome+"</td><td>"+lastElement.nif+"</td><td>"+lastElement.contacto+"</td><td>"+lastElement.morada+"</td><td><a href="+"addFornecedor/"+ lastElement.id+">"+ "Edita" +"</a></td></tr>");
+                var test = $(".FornecedorTable").append("<tr><td>"+lastElement.id+"</td><td>"+lastElement.nome+"</td><td>"+lastElement.nif+"</td><td>"+lastElement.contacto+"</td><td>"+lastElement.morada+"</td><td><a href="+"addFornecedor/"+ lastElement.id+">"+ "Edita" +"</a></td></tr>");
 
-                    console.log(lastElement);
+                console.log(lastElement);
 
-                }
+            }
 
-            });
+        });
 
 
 // Adds single row to spreadsheet
@@ -139,13 +139,57 @@ $(document).ready(function(){
     });
 
 
+    $("#formSale").on('submit',function (e) {
+
+        e.preventDefault();
+
+        var client_id = parseInt($.session.get('clientSelected'));
+        var productList = JSON.parse($.session.get('arrayProducts'));
+        var inPrice = parseFloat($.session.get('Total'));
+
+        console.log(productList);
+
+        $.ajax({
+
+            type:'POST',
+            url:'/newSale',
+
+            data:{
+
+                'client_id': client_id,
+                'productList': productList,
+                'inPrice':inPrice
+            },
+
+            datatype:'json',
+
+            success:function(data){
+
+                console.log(data);
+            }
+        });
+    });
+
+
+
+
+    //Depois de a pagina ser carregada e caso exista produtos nas cookies
+    //atualiza esses mesmos produtos no DOM
+    function updateDOMSales(products){
+
+        for(var i = 0; i < products.length; i++){
+            //nome
+            $('.ulSalesList').append("<tr class='"+products[i].id +"'><td class='tdSales'>"+products[i].name+
+            "</td><td><input type='button' value='X' class='btnRemoveProductSale' onclick='removeProduct("+products[i].id+")'></td></tr>");
+        }
+    }
 
     //atualizar o cliente no DOM venda
     if($.session.get('clientSelectedName')){
         $('.pClient').html($.session.get('clientSelectedName'));
     }
     //atualizar produtos na venda
-  var products = JSON.parse($.session.get('arrayProducts'));
+    var products = JSON.parse($.session.get('arrayProducts'));
     updateDOMSales(products);
     total(products);
 

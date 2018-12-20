@@ -2,6 +2,8 @@
 @section('content')
     <h1>Create new Sale</h1>
 
+
+
     <div class="divNewSale verticalMenu">
     <form id="formSale" method="POST">
         <div class="divAddedProducts">
@@ -20,8 +22,12 @@
         <p class="pClient goBottom dataSales"></p>
         <p class="withBorder goBottom">Total: </p>
         <p class="pTotal goBottom dataSales"></p>
-        <input type="submit" id="btnSubmitSale" class="goBottom btnFinalizePurchase btnGeral" value="Finaliza Compra">
-        </form>
+
+        <input type="hidden" id="myToken" name="_token" value="{{ csrf_token() }}">
+        <input type="submit" id="btnSubmitSale" class="goBottom btnFinalizePurchase btnGeral" value="FINALIZA COMPRA">
+
+    </form>
+
     </div>
 
     <div class="productListSales verticalMenu">
@@ -40,7 +46,7 @@
                 <td>{{$client->nome}}</td>
                 <td>{{$client->nif}}</td>
                 <td><button onclick="addClientToSale('{{$client->nome}}','{{$client->id}}')">+</button></td>
-                <!--<td><a href="{{ route('salesAdd') }}"><input type="submit" value="+"></a></td>-->
+
             </tr>
         @endforeach
         </table>
@@ -100,9 +106,6 @@
         console.log(client_id);
 
     });
-
-
-
 
 
 

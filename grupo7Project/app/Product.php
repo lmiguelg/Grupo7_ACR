@@ -13,9 +13,9 @@ class Product extends Model
         return $this->belongsTo('App\Fornecedors', 'fornecedor_id', 'id');
     }
 
-    public function sale(){
+    // public function sale(){
 
-        return $this->hasMany('App\Product','sales_Item');
-    }
+    //     return $this->belongsToMany ('App\SaleItem');
+    // }
 
 }
