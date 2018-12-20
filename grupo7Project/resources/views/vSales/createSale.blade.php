@@ -2,6 +2,8 @@
 @section('content')
     <h1>Create new Sale</h1>
 
+
+
     <div class="divNewSale verticalMenu">
     <form id="formSale" method="POST">
         <div class="divAddedProducts">
@@ -20,8 +22,10 @@
         <p class="pClient goBottom dataSales"></p>
         <p class="withBorder goBottom">Total: </p>
         <p class="pTotal goBottom dataSales"></p>
+        <input type="hidden" id="myToken" name="_token" value="{{ csrf_token() }}">
         <input type="submit" id="btnSubmitSale" class="goBottom btnFinalizePurchase btnGeral" value="FINALIZA COMPRA">
-        </form>
+
+    </form>
     </div>
 
     <div class="productListSales verticalMenu">
@@ -40,7 +44,7 @@
                 <td>{{$client->nome}}</td>
                 <td>{{$client->nif}}</td>
                 <td><button onclick="addClientToSale('{{$client->nome}}','{{$client->id}}')">+</button></td>
-                <!--<td><a href="{{ route('salesAdd') }}"><input type="submit" value="+"></a></td>-->
+
             </tr>
         @endforeach
         </table>
@@ -70,39 +74,6 @@
     </div>
 
 <script>
-
-    $("#formSale").on('submit',function (e) {
-        e.preventDefault();
-        var client_id = $.session.get('clientSelected');
-        var productList = JSON.parse($.session.get('arrayProducts'));
-
-        $.ajax({
-
-            type:'GET',
-            url:'/newSale',
-
-            data:{
-
-                'client_id': client_id,
-                'productList': productList
-            },
-
-            datatype:'json',
-
-            success:function(data){
-
-                console.log(data);
-            }
-        });
-
-
-        console.log(productList);
-        console.log(client_id);
-
-    });
-
-
-
 
 
 

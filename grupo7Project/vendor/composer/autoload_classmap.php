@@ -21,6 +21,7 @@ return array(
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Controllers\\ProductsController' => $baseDir . '/app/Http/Controllers/ProductsController.php',
     'App\\Http\\Controllers\\SalesController' => $baseDir . '/app/Http/Controllers/SalesController.php',
+    'App\\Http\\Controllers\\gCalendarController' => $baseDir . '/app/Http/Controllers/gCalendarController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\CheckForMaintenanceMode' => $baseDir . '/app/Http/Middleware/CheckForMaintenanceMode.php',

@@ -355,6 +355,7 @@ class ComposerStaticInit88d1088abc265955692a24c865a70c4e
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\ProductsController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProductsController.php',
         'App\\Http\\Controllers\\SalesController' => __DIR__ . '/../..' . '/app/Http/Controllers/SalesController.php',
+        'App\\Http\\Controllers\\gCalendarController' => __DIR__ . '/../..' . '/app/Http/Controllers/gCalendarController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',

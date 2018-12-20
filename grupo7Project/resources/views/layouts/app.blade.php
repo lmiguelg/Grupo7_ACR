@@ -57,7 +57,12 @@
                         </div>
                         <div class="nav-item">
 
-                            <a class="nav-link" href="{{ '/newSale' }}">{{ __('Sales') }}</a>
+                            <a class="nav-link" href="{{ route('getSales') }}">{{ __('Sales') }}</a>
+
+                        </div>
+                        <div class="nav-item">
+
+                            <a class="nav-link" href="{{ route('sales') }}">{{ __('New sale') }}</a>
 
                         </div>
                         <div class="nav-item">
