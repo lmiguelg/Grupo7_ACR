@@ -12,9 +12,12 @@ class FornecedorController extends Controller
 {
     //
 
-    public function index(){
+    public function index(Request $request){
 
         $fornecedores = DB::table('fornecedors')->paginate(10);
+        if ($request->ajax()) {
+            return view('Fornecedores.fornecedoresList',compact('fornecedores'))->render();
+        }
 
         return view('Fornecedores.fornecedores',compact('fornecedores'));
     }

@@ -8,7 +8,7 @@
     <div class="container">
 
         <h3 class="sectionTitle">Adiciona fornecedores</h3>
-        <div class="divPreForm">
+        <div class="divPreForm" >
             <form id="formAddFornecedor" action="#">
                 <div class="divColumnAddFornecedor">
                     <label>Nome da empresa</label><br>
@@ -33,7 +33,7 @@
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
 
               <div class="divColumnAddFornecedor">
-                    <input type="submit" value="Add" id="btnAddFornecedor" onclick="handleSignInClick()" >
+                    <input type="submit" value="Add" id="btnAddFornecedor" class="btnGeral" onclick="handleSignInClick()" >
                 </div>
 
             </form>
@@ -41,12 +41,13 @@
 
     </div>
 
-    <section class="fornecedoresList">
+    <section class="productList">
         @include('Fornecedores.fornecedoresList')
     </section>
 
 <script>
-
+//**************************************ATENÇÃO TEM DE METER NO LINK localhost:8000*********************************************************
+//MUDAR O LINK NA API QUANDO FOR PARA METER NA MAQUINA VIRTUAL********************************************************************************
     $(function() {
         $('body').on('click', '.pagination a', function(e) {
             e.preventDefault();
@@ -59,7 +60,7 @@
             $.ajax({
                 url : url
             }).done(function (data) {
-                $('.fornecedoresList').html(data);
+                $('.productList').html(data);
             }).fail(function () {
                 alert('Articles could not be loaded.');
             });
@@ -84,6 +85,7 @@
             // How the input data should be inserted.
             insertDataOption: 'INSERT_ROWS', // TODO: Update placeholder value.
         };
+
         var nome = document.getElementById("inFornecedorNome").value;
         var nif = document.getElementById("inNIF").value;
         var contacto = document.getElementById("inContacto").value;

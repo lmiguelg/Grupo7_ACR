@@ -3,58 +3,48 @@
 @extends('layouts.app')
 @section('content')
 
-    <div class="ClientList">
-        <table class="ClientTable" id="ClientTable">
-            <th>Id</th>
-            <th>Nome</th>
-            <th>NIF</th>
-            <th>contacto</th>
-            <th>Morada</th>
-            <th>Edit</th>
-
-        </table>
-    </div>
 
     <div>
 
         <h3 class="sectionTitle">Adicionar Cilentes</h3>
+
         <div class="divPreForm">
-            <form id="formAddClient" action="#">
-                <div class="divColumnAddClient">
+            <form id="formAddCliente" action="#">
+                <div class="divColumnAddFornecedor" style="margin-bottom: 20px; margin-right: 5px;">
                     <label>Nome </label><br>
                     <input type="text" id="inClientNome" name="inClientNome" required>
                 </div>
 
-                <div class="divColumnAddClient">
+                <div class="divColumnAddFornecedor" style="margin-bottom: 20px; margin-right: 5px;">
                     <label>NIF</label><br>
                     <input type="text" id="inNIF" name="inNIF" required>
                 </div>
 
-                <div class="divColumnAddClient">
+                <div class="divColumnAddFornecedor" style="margin-bottom: 20px;">
                     <label>contacto</label><br>
                     <input type="text" id="inContacto" name="inContacto" required>
                 </div>
 
-                <div class="divColumnAddClient">
+                <div class="divColumnAddFornecedor" style="margin-bottom: 20px; ">
                     <label>Morada</label><br>
                     <input type="text" id="inMorada" name="inMorada" required>
                 </div>
 
-                <div class="divColumnAddClient">
+                <div class="divColumnAddFornecedor" style="margin-bottom: 20px; ">
                     <label>Email</label><br>
                     <input type="email" id="inEmail" name="inEmail" required>
                 </div>
 
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
 
-                <div class="divColumnAddClient">
-                    <input type="submit" value="Add" id="btnAddClient">
+                <div class="divColumnAddFornecedor" style="margin-bottom: 20px; ">
+                    <input type="submit" value="Add" id="btnAddClient" class="btnGeral">
                 </div>
 
             </form>
         </div>
     </div>
-        <section class="ClientList">
+        <section class="productList">
             @include('Client.clientList')
         </section>
 
@@ -72,7 +62,7 @@
                     $.ajax({
                         url : url
                     }).done(function (data) {
-                        $('.ClientList').html(data);
+                        $('.productList').html(data);
                     }).fail(function () {
                         alert('Articles could not be loaded.');
                     });

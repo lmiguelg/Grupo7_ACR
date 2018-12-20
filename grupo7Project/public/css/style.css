@@ -62,7 +62,7 @@ input{
 }
 
 .btnGeral{
-    display:inline-block;
+    display:block;
     padding:0.35em 1.2em;
     border:0.1em solid #FFFFFF;
     margin:0 0.3em 0.3em 0;
@@ -76,6 +76,8 @@ input{
     transition: all 0.2s;
     background-color:#1f4287;
     margin-top:7%;
+
+    margin:auto;
 
     }
 
@@ -183,7 +185,7 @@ input{
     border:0.1em solid #FFFFFF;
     border-radius:1px;
     box-sizing: border-box;
-    text-decoration:Bold;
+    text-: bold;
     color:#FFFFFF;
     text-align:center;
     transition: all 0.2s;
@@ -201,7 +203,7 @@ input{
 
 
 
-/*tabela de produtis*/
+/*tabela de produtos*/
 .productList{
     margin-top:10%;
     width:100%;
@@ -378,9 +380,26 @@ table.inventoryTable tr:nth-child(even) {
 
 #formAddFornecedor {
 
-    min-height: 80px;
+    height: 100px;
     width:100%;
     margin-left: auto;
+
+}
+#formAddCliente {
+
+    height: 170px;
+    width:100%;
+    margin-left: auto;
+
+}
+
+#formAddCliente .divColumnAddFornecedor{
+
+    width:15%;
+    float:left;
+    padding:1% 2% 1% 2%;
+    color:white;
+    margin-bottom: 100px;
 
 }
 
@@ -391,6 +410,7 @@ table.inventoryTable tr:nth-child(even) {
     float:left;
     padding:1% 2% 1% 2%;
     color:white;
+    margin-bottom: 100px;
 }
 
 /*editar fornecedores*/
@@ -467,6 +487,47 @@ table.inventoryTable tr:nth-child(even) {
 
 
 }
+
+.pagination{
+
+
+}
+.pagination li{
+
+
+    display: inline-block;
+
+    margin-top: 10px;
+
+    border: solid 2px rgb(31, 66, 135);
+
+    padding: 2px;
+
+    background: rgb(31, 66, 135);
+    color: white;
+
+}
+.pagination li:hover{
+
+    background: #227dc7;
+
+
+}
+
+.pagination a {
+    text-decoration: none;
+    color: white;
+}
+
+.pagination .active{
+
+
+    background: #227dc7;
+    color: white;
+    border: solid 2px  #227dc7;
+}
+
+
 
 
 

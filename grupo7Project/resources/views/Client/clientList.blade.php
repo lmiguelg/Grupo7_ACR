@@ -1,5 +1,10 @@
 <div class="ClientList">
-    <table class="ClientTable" id="ClientTable">
+
+    <table class="inventoryTable" id="ClientTable">
+
+        <tr >
+            <th id="thTitleInventory" colspan="7">Lista de fornecedores</th>
+        </tr>
         <th>Id</th>
         <th>Nome</th>
         <th>NIF</th>

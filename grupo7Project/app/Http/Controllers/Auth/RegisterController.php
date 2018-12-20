@@ -81,10 +81,14 @@ class RegisterController extends Controller
         ]);
     }
 
-    public function indice ()
+    public function indice (Request $request)
     {
 
-        $utilizadores = DB::table('users')->get();
+        $utilizadores = DB::table('users')->paginate(10);
+        if ($request->ajax()) {
+            return view('User.user', compact('utilizadores'))->render();
+        }
+
 
         return view('User.user', compact('utilizadores'));
     }

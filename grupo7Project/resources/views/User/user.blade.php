@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="FornecedorList">
-        <table class="FornecedorTable" id="FornecedorTable">
+        <table class="inventoryTable" id="FornecedorTable" style="margin-top: 200px;">
             <th>Id</th>
             <th>Nome</th>
             <th>username</th>
@@ -26,8 +26,31 @@
             @endforeach
 
         </table>
-    </div>
 
+        {{$utilizadores -> render()}}
+    </div>
+    <script>
+
+        $(function() {
+            $('body').on('click', '.pagination a', function(e) {
+                e.preventDefault();
+                var url = $(this).attr('href');
+                getArticles(url);
+                window.history.pushState("", "", url);
+            });
+
+            function getArticles(url) {
+                $.ajax({
+                    url : url
+                }).done(function (data) {
+                    $('.FornecedorList').html(data);
+                }).fail(function () {
+                    alert('Articles could not be loaded.');
+                });
+            }
+
+        });
+    </script>
 
 
 

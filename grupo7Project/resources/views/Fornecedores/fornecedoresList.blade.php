@@ -1,12 +1,16 @@
-<div class="FornecedorList">
+<div class="productList">
 
-    <table class="FornecedorTable" id="FornecedorTable">
+    <table class="inventoryTable" id="FornecedorTable">
+        <tr >
+            <th id="thTitleInventory" colspan="7">Lista de fornecedores</th>
+        </tr>
         <th>Id</th>
         <th>Nome</th>
         <th>NIF</th>
         <th>contacto</th>
         <th>Morada</th>
         <th>Edit</th>
+
 
         @foreach($fornecedores as $fornecedor)
             <tr>
@@ -25,5 +29,6 @@
 
     </table>
 
-    {{  $fornecedores->links() }}
+    {{  $fornecedores->render() }}
+
 </div>
