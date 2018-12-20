@@ -22,10 +22,12 @@
         <p class="pClient goBottom dataSales"></p>
         <p class="withBorder goBottom">Total: </p>
         <p class="pTotal goBottom dataSales"></p>
+
         <input type="hidden" id="myToken" name="_token" value="{{ csrf_token() }}">
         <input type="submit" id="btnSubmitSale" class="goBottom btnFinalizePurchase btnGeral" value="FINALIZA COMPRA">
 
     </form>
+
     </div>
 
     <div class="productListSales verticalMenu">
@@ -74,6 +76,36 @@
     </div>
 
 <script>
+
+    $("#formSale").on('submit',function (e) {
+        e.preventDefault();
+        var client_id = $.session.get('clientSelected');
+        var productList = JSON.parse($.session.get('arrayProducts'));
+
+        $.ajax({
+
+            type:'POST',
+            url:'/newSale',
+
+            data:{
+
+                'client_id': client_id,
+                'productList': productList
+            },
+
+            datatype:'json',
+
+            success:function(data){
+
+                console.log(data);
+            }
+        });
+
+
+        console.log(productList);
+        console.log(client_id);
+
+    });
 
 
 

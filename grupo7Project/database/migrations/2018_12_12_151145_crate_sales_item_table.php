@@ -17,7 +17,14 @@ class CrateSalesItemTable extends Migration
         Schema::create('sales_Item', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('product_id');
+
             $table->unsignedInteger('sale_id');
+
+ 
+            $table->foreign('product_id')->references('id')->on('products');
+            $table->foreign('sale_id')->references('id')->on('sales')->onDelete('cascade');
+            $table->integer('quantidade');
+
             $table->timestamps();
         });
     }
