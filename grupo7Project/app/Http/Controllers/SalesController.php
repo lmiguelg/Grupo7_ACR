@@ -58,11 +58,15 @@ class SalesController extends Controller
 
     }
 
-    public function getpdf(){
-        $data = "controller pdf";
+    public function getpdf($id){
+        $dateInvoice = date("Y/m/d");
+        $sale = Sale::find($id);
+        $cliente = Clientes::find($sale->id);
+        $saleProducts = SaleProduct::where('sale_id',$sale->id)->get();
+        $products = Product::get();
         // $pdf = PDF::loadView('pdf', compact('data'));
         // return $pdf->download('invoice.pdf');
-        return view('pdf',compact('data'));
+        return view('pdf',compact('sale','dateInvoice','cliente','saleProducts','products'));
 
     }
 

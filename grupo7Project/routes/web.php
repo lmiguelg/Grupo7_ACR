@@ -35,7 +35,7 @@ Route::get('/salesList','SalesController@getSales')->name('getSales');
 Route::post('/newSale','SalesController@addNewSale');
 
 //rotas para pdf das vendas
-Route::get('/pdf','SalesController@getpdf');
+Route::get('/pdf/{id}','SalesController@getpdf');
 
 //Rota para os fonecedores
 
