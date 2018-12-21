@@ -10,6 +10,7 @@
 }
 .divGlobalInvoice{
     max-width: 800px;
+    height: 842px;
     margin: auto;
     padding: 30px;
     border: 1px solid #eee;
@@ -46,4 +47,11 @@
 }
 .divFinalPDF{
     text-align:right;
+    padding-top:15px;
+}
+
+.divAssinatura{
+    position:absolute;
+    bottom:-250px;
+    right:350px;
 }

@@ -47,13 +47,13 @@
                 <hr>
                 <label>IVA: 22% </label><br>
 
-                <label><b>VALORA PAGAR:</b></label><span id="price"> {{$sale->price}}€</span><br>
+                <label><b>VALOR A PAGAR:</b></label><span id="price"> {{$sale->price}}€</span><br>
                 <hr>
 
 
             </div>
             <div class="divAssinatura">
-                <label>____________________________</label><br>
+                <label>______________________</label><br>
                 <label>(assinatura do funcionário)</label>
             </div>
 
@@ -65,6 +65,3 @@
 
 
 </body>
-
-{{$sale}}
-{{$saleProducts}}
