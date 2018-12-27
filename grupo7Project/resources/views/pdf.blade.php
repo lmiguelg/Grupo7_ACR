@@ -47,7 +47,7 @@
                 <hr>
                 <label>IVA: 22% </label><br>
 
-                <label><b>VALOR A PAGAR:</b></label><span id="price"> {{$sale->price}}€</span><br>
+                <label class="valor"><b>VALOR A PAGAR:</b></label><span id="price"> {{$sale->price}}€</span><br>
                 <hr>
 
 
