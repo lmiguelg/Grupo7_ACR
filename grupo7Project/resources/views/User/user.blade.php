@@ -28,6 +28,7 @@
         </table>
 
         {{$utilizadores -> render()}}
+
     </div>
     <script>
 

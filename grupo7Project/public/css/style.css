@@ -276,6 +276,7 @@ table.inventoryTable tr:nth-child(even) {
     text-decoration: none;
     display: block;
     text-align: left;
+    background: rgba(0,0,0,0.2);
 
 }
 
@@ -296,7 +297,7 @@ table.inventoryTable tr:nth-child(even) {
 
 
 /*inicio do css da pagina de login */
-.form-login{
+.form{
 
     position: relative;
     margin: 3% auto;
@@ -308,7 +309,7 @@ table.inventoryTable tr:nth-child(even) {
 }
 
 
-.form-login .header{
+.form .header{
 
     text-align: center;
     font-weight: 200;
@@ -318,7 +319,7 @@ table.inventoryTable tr:nth-child(even) {
     margin-bottom: 10px;
 }
 
-.form-login .login-input{
+.form .input{
 
 
     font-family: "Roboto", sans-serif;
@@ -329,7 +330,7 @@ table.inventoryTable tr:nth-child(even) {
     font-size: 14px;
 
 }
-.form-login .login-input .form-control{
+.form .input .form-control{
 
     width: 100%;
 
@@ -349,7 +350,7 @@ table.inventoryTable tr:nth-child(even) {
 
 }
 
-.form-login button{
+.form button{
 
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
@@ -527,7 +528,54 @@ table.inventoryTable tr:nth-child(even) {
     border: solid 2px  #227dc7;
 }
 
+#menuButtons{
 
+    margin-left: 30%;
+    margin-top: 50px ;
 
+}
 
+.menuButtons{
+
+    float: left;
+    height: 100px;
+margin-top:50px;
+
+    margin-bottom: 20px;
+    width: 200px;
+    font-size: 30px;
+    margin-right: 30%;
+
+}
+
+.menuButtons a{
+
+    text-transform: uppercase;
+    outline: 0;
+    background:  rgb(31, 66, 135);
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    cursor: pointer;
+
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-decoration: none;
+
+}
+
+.menuButtons a:hover{
+
+    background: #227dc7;
+    cursor: pointer;
+    font-weight:bold;
+
+}
+
+.menuButtons h1{
+
+    text-align: center;
+}
 

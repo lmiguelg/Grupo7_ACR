@@ -8,6 +8,7 @@ use App\SaleProduct;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use PDF;
+use Illuminate\Foundation\Auth\User;
 
 
 class SalesController extends Controller
@@ -18,7 +19,10 @@ class SalesController extends Controller
 
         $products = Product::get();
         $clients = Clientes::get();
-        return view('vSales.createSale',compact('products','clients'));
+
+            return view('vSales.createSale',compact('products','clients'));
+
+
     }
 
     public function addNewSale(Request $request){

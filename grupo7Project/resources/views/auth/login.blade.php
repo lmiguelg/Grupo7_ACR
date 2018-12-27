@@ -25,14 +25,14 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
 
-            <div class="form-login">
+            <div class="form">
                 <div class="header">{{ __('Login') }}</div>
 
                 <div >
                     <form method="POST" action="{{route('login')}}">
                         @csrf
 
-                        <div class="login-input">
+                        <div class="input">
                             <label for="username"  >{{ __('Username:') }}</label>
 
                             <div class="col-md-6">
@@ -48,7 +48,7 @@
                         </div>
 
 
-                        <div class="login-input">
+                        <div class="input">
                             <label for="password">{{ __('Password:') }}</label>
 
 
