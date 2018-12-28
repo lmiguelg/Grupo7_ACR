@@ -1,4 +1,4 @@
-    
+
 
 
 $(document).ready(function(){
@@ -13,25 +13,14 @@ $(document).ready(function(){
 
         e.preventDefault();
 
-            var inProductName       = $('input[name=inProductName]').val();
-            var inQuantity          = $('input[name=inQuantity]').val();
-            var inExpirationDate    = $('input[name=inExpirationDate]').val();
-            var inProductPrice      = $('input[name=inProductPrice]').val();
-            var inFornecedor        = $('select[name=inFornecedor]').val();
-            var inProduct_photoAddNew     = $('input[name=inProduct_photoAddNew]').val();
-            //console.log(inProduct_photo);
-
+            var formData = new FormData(this);
 
         $.ajax({
             type:'POST',
             url:'/addProduct',
-            data: { 'inProductName':    inProductName,
-                    'inQuantity':       inQuantity,
-                    'inExpirationDate': inExpirationDate,
-                    'inProductPrice':   inProductPrice,
-                    'inFornecedor': inFornecedor,
-                    'inProduct_photoAddNew':inProduct_photoAddNew
-            },
+            data: formData,
+            contentType: false,
+            processData: false,
             success:function(data){
 
 
@@ -44,9 +33,11 @@ $(document).ready(function(){
                 var test = $(".inventoryTable").append("<tr><td>"+lastElement.id+"</td><td>"+lastElement.name+"</td><td>"+lastElement.expiration_date+"</td><td>"+lastElement.quantity+"</td><td>"+lastElement.price+"</td><td>"+lastElement2.nome+"</td><td><a href="+"addProduct/productDetails/"+ lastElement.id+ "/edit"+ ">"+"+" +" </a></td></tr>");
 
                 console.log(lastElement);
-                //$("#inventoryTable").find('tr:last').append();
+                alert("Produto adicionado com sucesso!");
+
             }
         });
+        $('#formAddProduct')[0].reset();
 
     });
 
@@ -164,7 +155,8 @@ $(document).ready(function(){
             datatype:'json',
 
             success:function(data){
-
+                resetFormSales();
+                window.location = data;
                 console.log(data);
             }
         });
@@ -185,15 +177,18 @@ $(document).ready(function(){
     }
 
     //atualizar o cliente no DOM venda
-    if($.session.get('clientSelectedName')){
-        $('.pClient').html($.session.get('clientSelectedName'));
+
+    if(sessionStorage.getItem('clientSelectedName') != null){
+        $('.pClient').html(sessionStorage.getItem('clientSelectedName'));
     }
+
     //atualizar produtos na venda
-    var products = JSON.parse($.session.get('arrayProducts'));
-    updateDOMSales(products);
-    total(products);
+        var products = JSON.parse(sessionStorage.getItem('arrayProducts'));
+        if(sessionStorage.getItem('arrayProducts') != undefined){
+            updateDOMSales(products);
+        }
 
-
+        $('.pTotal').html(sessionStorage.getItem('Total'));
 
 });
 

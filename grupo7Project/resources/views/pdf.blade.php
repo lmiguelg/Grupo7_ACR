@@ -8,6 +8,11 @@
 </head>
 
 <body>
+
+<style>
+
+</style>
+
     <div class="divGlobalInvoice">
         <div class="headerInvoice">
             <img src="{{ URL::to('/') }}/Logo/logo.png">
