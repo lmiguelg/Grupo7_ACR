@@ -16,13 +16,14 @@ class CheckCategory
      */
     //
     //category -> contém a categoria do utilizador
-    public function handle($request, Closure $next)
+    public function handle($request, Closure $next, ...$params)
     {
-
-
-        if (Auth::user() && Auth::user()->category() == 'admin'/*$category*/) {
-            return $next($request);
+        //dd($params);
+        foreach($params as $user){
+            if (Auth::user() && Auth::user()->category() == $user) {
+                return $next($request);
+            }
         }
-        return response("Permissões insuficientes", 401);
+        return response("Acesso negado", 401);
     }
 }
