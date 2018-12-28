@@ -60,12 +60,12 @@
                         </div>
                         <div class="nav-item">
 
-                            <a class="nav-link" href="{{ route('getSales') }}">{{ __('Sales') }}</a>
+                            <a class="nav-link" href="{{ route('getSales') }}">{{ __('Vendas') }}</a>
 
                         </div>
                         <div class="nav-item">
 
-                            <a class="nav-link" href="{{ route('sales') }}">{{ __('New sale') }}</a>
+                            <a class="nav-link" href="{{ route('sales') }}">{{ __('Nova Venda') }}</a>
 
                         </div>
                         <div class="nav-item">
@@ -75,7 +75,7 @@
                         </div>
                         <div class="nav-item">
 
-                            <a class="nav-link" href="{{ '/addClient' }}">{{ __('Cliente') }}</a>
+                            <a class="nav-link" href="{{ '/addClient' }}">{{ __('Clientes') }}</a>
 
                         </div>
                         <div class="nav-item">
@@ -115,7 +115,12 @@
                         </div>
                         <div class="nav-item">
 
-                            <a class="nav-link" href="{{ route('sales') }}">{{ __('Sales') }}</a>
+                            <a class="nav-link" href="{{ route('getSales') }}">{{ __('Vendas') }}</a>
+
+                        </div>
+                        <div class="nav-item">
+
+                            <a class="nav-link" href="{{ route('sales') }}">{{ __('Nova Venda') }}</a>
 
                         </div>
 
@@ -127,6 +132,16 @@
                         <div class="nav-item">
 
                             <a class="nav-link" href="{{ route('fornecedor') }}">{{ __('Fornecedor') }}</a>
+
+                        </div>
+                        <div class="nav-item">
+
+                            <a class="nav-link" href="{{ '/addClient' }}">{{ __('Clientes') }}</a>
+
+                        </div>
+                        <div class="nav-item">
+
+                            <a class="nav-link" href="{{ route('getSales') }}">{{ __('Vendas') }}</a>
 
                         </div>
 

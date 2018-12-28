@@ -25,7 +25,7 @@
 
                 <td>{{$sale->price}}</td>
                 <td>{{$sale->created_at}}</td>
-                <td></td>
+                <td><a href="{{ URL('/pdf/'.$sale->id)}}"><button>+</button></a></td>
             </tr>
         @endforeach
 
