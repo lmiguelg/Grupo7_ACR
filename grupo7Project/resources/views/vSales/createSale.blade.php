@@ -77,39 +77,6 @@
 
 <script>
 
-    $("#formSale").on('submit',function (e) {
-        e.preventDefault();
-        var client_id = $.session.get('clientSelected');
-        var productList = JSON.parse($.session.get('arrayProducts'));
-
-        $.ajax({
-
-            type:'POST',
-            url:'/newSale',
-
-            data:{
-
-                'client_id': client_id,
-                'productList': productList
-            },
-
-            datatype:'json',
-
-            success:function(data){
-
-                console.log(data);
-            }
-        });
-
-
-        console.log(productList);
-        console.log(client_id);
-
-    });
-
-
-
-
 
     function addClientToSale(name, id){
         alert(name + id);
@@ -118,7 +85,7 @@
 
         $.session.set('clientSelectedName', name);
 
-        $('.pClient').html($.session.get('clientSelectedName'));
+        $('.pClient').html(sessionStorage.getItem('clientSelectedName'));
 
     }
 
@@ -130,9 +97,9 @@
 
         var products=[];
 
-        if($.session.get('arrayProducts')){
+        if(sessionStorage.getItem('arrayProducts')){
 
-            products = JSON.parse($.session.get('arrayProducts'));
+            products = JSON.parse(sessionStorage.getItem('arrayProducts'));
 
         }
         products.push(product);
@@ -142,7 +109,7 @@
 
         console.log("ultimo prod: " + JSON.stringify(product));
 
-        $('.ulSalesList').append("<tr class='"+product.id +"'><td class='tdSales'>"+products[products.length - 1].name+
+        $('.ulSalesList').append("<tr class='prodDelete "+product.id +"'><td class='tdSales'>"+products[products.length - 1].name+
         "</td><td><input type='button' value='X' class='btnRemoveProductSale' onclick='removeProduct("+id+")'></td></tr>");
 
         total(products);
@@ -154,7 +121,7 @@
 
         for(var i = 0; i < products.length; i++){
             //nome
-            $('.ulSalesList').append("<tr class='"+products[i].id +"'><td class='tdSales'>"+products[i].name+
+            $('.ulSalesList').append("<tr class='prodDelete "+products[i].id +"'><td class='tdSales'>"+products[i].name+
             "</td><td><input type='button' value='X' class='btnRemoveProductSale' onclick='removeProduct("+products[i].id+")'></td></tr>");
         }
     }
@@ -171,7 +138,7 @@
         console.log("poduto: " + id);
         var idDoArray = 0;
         $("."+id).remove();
-        var products = JSON.parse($.session.get('arrayProducts'));
+        var products = JSON.parse(sessionStorage.getItem('arrayProducts'));
         for(var i = 0;i<products.length;i++ ){
             if(products[i].id == id){
                 products.pop(id);
@@ -180,6 +147,14 @@
         $.session.set('arrayProducts', JSON.stringify(products));
         total(products);
         console.log(products);
+
+    }
+
+    //anular uma venda e limpar o formulário/ variaveis de sessão
+    function resetFormSales(){
+
+        sessionStorage.clear();
+        console.log("resetttttttt");
 
     }
 

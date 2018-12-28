@@ -37,12 +37,17 @@ class ProductsController extends Controller
 
         $product->expiration_date   = $request->inExpirationDate;
 
-        if($request->file('inProduct_photoAddNew') != null){
+
+
+
+        //if($request->file('inProduct_photoAddNew') != null){
+
+
             $file                       = $request->file('inProduct_photoAddNew');
             $filename                   = time().'-'.$file->getClientOriginalName();
             $file                       = $file->move('images/product_photos',$filename);
             $product->filepath          = $filename;
-        }
+        //}
 
 
         $product->price             = $request ->inProductPrice;

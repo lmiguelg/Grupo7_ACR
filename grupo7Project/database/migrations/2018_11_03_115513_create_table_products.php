@@ -16,7 +16,7 @@ class CreateTableProducts extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->date('expiration_date');
+            $table->date('expiration_date')->nullable()->change();
             $table->integer('quantity');
             $table->decimal('price');
 

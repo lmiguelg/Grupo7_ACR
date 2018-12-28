@@ -40,6 +40,14 @@ class SalesController extends Controller
         foreach($request->productList as $prod){
 
             $saleProduct = new SaleProduct;
+            //decrementar quantidade do produto
+            $product = Product::find($prod['id']);
+            $quantidade = $product->quantity;
+            $intQuantidade = intval($quantidade);
+            $intQuantidade--;
+            $product->quantity = strval($intQuantidade);
+            $product->save();
+
             \Log::info($prod['id']);
             $saleProduct->product_id =$prod['id'] ;
             $saleProduct->sale_id = $lastSale->id;
@@ -48,7 +56,8 @@ class SalesController extends Controller
 
         }
 
-        return view('vSales.salesList');
+
+        return url("/salesList");
     }
 
     public function getSales(Request $request){
@@ -75,9 +84,10 @@ class SalesController extends Controller
         }
         \Log::info($cliente);
         $products = Product::get();
+
         $pdf = PDF::loadView('pdf', compact('sale','dateInvoice','cliente','saleProducts','products'));
-        return $pdf->download('fatura.pdf');
-        //return view('pdf',compact('sale','dateInvoice','cliente','saleProducts','products'));
+        //return $pdf->download('fatura.pdf');
+        return view('pdf',compact('sale','dateInvoice','cliente','saleProducts','products'));
 
     }
 
