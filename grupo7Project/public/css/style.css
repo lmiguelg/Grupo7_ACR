@@ -485,14 +485,13 @@ table.inventoryTable tr:nth-child(even) {
 
     text-align: center;
 
-
-
 }
-
 .pagination{
-
-
+    margin-top:2%;
+    width:95%;
+    text-align: center;
 }
+
 .pagination li{
 
 
