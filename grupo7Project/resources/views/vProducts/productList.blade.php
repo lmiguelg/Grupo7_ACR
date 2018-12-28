@@ -55,7 +55,7 @@
 
 
 </div>
-<section class="productList">
+<section class="salesList">
     @include('vProducts.productListTable')
 </section>
 
@@ -73,7 +73,7 @@
             $.ajax({
                 url : url
             }).done(function (data) {
-                $('.productList').html(data);
+                $('.salesList').html(data);
             }).fail(function () {
                 alert('Articles could not be loaded.');
             });

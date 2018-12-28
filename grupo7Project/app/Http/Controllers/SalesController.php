@@ -6,6 +6,7 @@ use App\Clientes;
 use App\Sale;
 use App\SaleProduct;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Response;
 use PDF;
 use Illuminate\Foundation\Auth\User;
@@ -52,12 +53,14 @@ class SalesController extends Controller
 
     public function getSales(Request $request){
 
-        $sales = Sale::get();
+        $sales = DB::table('sales')->paginate(10);;
         $saleProduct = SaleProduct::get();
         $clientes = Clientes::get();
         $produtos = Product::get();
 
-
+        if ($request->ajax()) {
+            return view('vSales.salesTable', compact('sales','saleProduct','clientes','produtos'))->render();
+        }
         return view('vSales.salesList', compact('sales','saleProduct','clientes','produtos'));
 
     }
