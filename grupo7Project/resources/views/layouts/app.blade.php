@@ -126,7 +126,7 @@
 
                         <div class="nav-item">
 
-                            <a class="nav-link" href="{{ route('fornecedor') }}">{{ __('Fornecedors') }}</a>
+                            <a class="nav-link" href="{{ route('fornecedor') }}">{{ __('Fornecedor') }}</a>
 
                         </div>
 
