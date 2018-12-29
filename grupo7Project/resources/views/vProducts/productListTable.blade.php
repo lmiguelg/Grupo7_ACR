@@ -1,16 +1,16 @@
 <div>
     <table class="inventoryTable">
         <tr >
-            <th id="thTitleInventory" colspan="7">Inventory List</th>
+            <th id="thTitleInventory" colspan="7">Lista de produtos</th>
         </tr>
         <tr>
             <th>Id</th>
-            <th>Name</th>
-            <th>Expiration date</th>
-            <th>Quantity</th>
-            <th>Price(€)</th>
-            <th>Provider</th>
-            <th>Edit</th>
+            <th>Nome</th>
+            <th>Data validade</th>
+            <th>Quantidade</th>
+            <th>Preço(€)</th>
+            <th>Fornecedor</th>
+            <th>Editar</th>
 
         </tr>
 

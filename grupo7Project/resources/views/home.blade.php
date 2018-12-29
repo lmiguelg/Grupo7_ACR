@@ -6,7 +6,8 @@
 <div id="menuButtons">
     @switch(Auth::user()->category )
         @case('admin')
-        <h1>Bem-vindo excelentíssimo {{ Auth::user()->name }} </h1>
+        <h1>Bem-vindo {{ Auth::user()->name }} </h1>
+
         <div class="menuButtons">
 
             @if (Route::has('register'))
@@ -89,6 +90,16 @@
         <div class="menuButtons">
 
             <a class="nav-link" href="{{ route('fornecedor') }}">{{ __('Fornecedor') }}</a>
+
+        </div>
+        <div class="menuButtons">
+
+            <a class="nav-link" href="{{ route('sales') }}">{{ __('Vendas') }}</a>
+
+        </div>
+        <div class="menuButtons">
+
+            <a class="nav-link" href="{{ '/addClient' }}">{{ __('Cliente') }}</a>
 
         </div>
 

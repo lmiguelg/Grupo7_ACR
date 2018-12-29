@@ -3,30 +3,30 @@
 @section('content')
 
 
-<h1>Inventory</h1>
+<h1>Stock de Produtos</h1>
 
 <div class="container">
 
-    <h3 class="sectionTitle">Add product to inventory</h3>
+    <h3 class="sectionTitle">Adicionar produto ao stock</h3>
     <div class="divPreForm">
     <form id="formAddProduct" action="#">
         <div class="divColumnAddProduct">
-            <label>Product Name</label><br>
+            <label>Produto</label><br>
             <input type="text" id="inProductName" name="inProductName" required>
         </div>
 
         <div class="divColumnAddProduct">
-            <label>Quantity</label><br>
+            <label>Quantidade</label><br>
             <input type="text" id="inQuantity" name="inQuantity" required>
         </div>
 
         <div class="divColumnAddProduct">
-            <label>Expiration date</label><br>
+            <label>Data de validade</label><br>
             <input type="date" id="inExpirationDate" name="inExpirationDate">
         </div>
 
         <div class="divColumnAddProduct">
-            <label>Price(€)</label><br>
+            <label>Preço(€)</label><br>
             <input type="number" step="0.01" id="inProductPrice" name="inProductPrice" required>
         </div>
 
@@ -47,7 +47,7 @@
 
 
         <div class="divColumnAddProduct">
-            <input type="submit" value="Add" id="btnAddProduct" class="btnGeral" onclick="handleSignInClick()" >
+            <input type="submit" value="Adicionar" id="btnAddProduct" class="btnGeral" onclick="handleSignInClick()" >
         </div>
 
     </form>
