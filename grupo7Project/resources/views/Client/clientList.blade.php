@@ -3,7 +3,7 @@
     <table class="inventoryTable" id="ClientTable">
 
         <tr >
-            <th id="thTitleInventory" colspan="7">Lista de fornecedores</th>
+            <th id="thTitleInventory" colspan="7">Lista de Clientes</th>
         </tr>
         <th>Id</th>
         <th>Nome</th>

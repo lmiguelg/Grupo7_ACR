@@ -44,15 +44,17 @@ Route::get('/', function () {
     Route::get('/addFornecedor/{id}/delete', 'FornecedorController@fornecedorDelete')->middleware('category:admin,armazem,gestor');
 
     //rota para os clientes
-    Route::get('/addClient', 'ClientController@index')->middleware('category:admin,loja,gestor');
-    Route::post('/addClient', 'ClientController@addClient')->name('client')->middleware('category:admin,armazem,gestor');
+    Route::get('/addClient', 'ClientController@index')->name('client')->middleware('category:admin,loja,gestor');
+    Route::post('/addClient', 'ClientController@addClient')->middleware('category:admin,armazem,gestor');
     Route::get('/addClient/{id}', 'ClientController@editClient')->middleware('category:admin,armazem,gestor');
+    Route::post('/addClient/{id}', 'ClientController@updateClient')->middleware('category:admin,armazem,gestor');
+    Route::get('/addClient/{id}/delete', 'ClientController@clientDelete')->middleware('category:admin,armazem,gestor');
 
     //editar utilizadores
     Route::get('/editUser', 'Auth\RegisterController@indice')->name('utilizadores')->middleware('category:admin');
     Route::get('/editUser/{id}', 'Auth\RegisterController@editaFuncionario')->middleware('category:admin');
     Route::post('editUser/{id}', 'Auth\RegisterController@updateFuncionario' )->middleware('category:admin');
-
+    Route::get('/editUser/{id}/delete', 'Auth\RegisterController@deleteFuncionario')->middleware('category:admin');
     //home
     Route::get('/home', 'HomeController@index')->name('home')->middleware('category:admin,gestor,loja,armazem');
 

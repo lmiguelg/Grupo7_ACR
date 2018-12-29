@@ -4,6 +4,9 @@
 
     <div class="FornecedorList">
         <table class="inventoryTable" id="FornecedorTable" style="margin-top: 200px;">
+            <tr >
+                <th id="thTitleInventory" colspan="7">Lista de Utilizadores</th>
+            </tr>
             <th>Id</th>
             <th>Nome</th>
             <th>username</th>

@@ -38,7 +38,7 @@
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
 
                 <div class="divColumnAddFornecedor" style="margin-bottom: 20px; ">
-                    <input type="submit" value="Add" id="btnAddClient" class="btnGeral">
+                    <input type="submit" value="Adicionar" id="btnAddClient" class="btnGeral">
                 </div>
 
             </form>

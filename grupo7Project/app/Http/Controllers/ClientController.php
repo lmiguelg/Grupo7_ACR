@@ -53,9 +53,29 @@ class ClientController extends Controller
 
     public function updateClient(Request $request, $id){
 
+            $client = Clientes::find($id);
 
+        $client->nome = $request->inClienteNome;
 
+        $client->nif =$request->inClienteNif;
 
+        $client->contacto = $request->inClienteContacto;
+
+        $client->morada=$request->inClienteMorada;
+
+        $client->email = $request -> inEmail;
+
+        $client->save();
+
+        return redirect("/addClient");
+
+    }
+
+    public function clientDelete($id){
+        $cliente                    = Clientes::findOrFail($id);
+        $cliente->delete();
+
+        return redirect("/addClient")->with('success','true');
     }
 
 }

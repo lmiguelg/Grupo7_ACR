@@ -97,7 +97,7 @@ class RegisterController extends Controller
 
         //  $funcionario=Auth::user()->DB::find($id);
 
-        $funcionario = DB::table('users')->find($id);
+        $funcionario = User::find($id);
 
 
         return view('User.edit', compact('funcionario'));
@@ -106,7 +106,7 @@ class RegisterController extends Controller
 
    public function updateFuncionario (Request $request, $id){
 
-        $funcionario =  DB::table('users')->find($id);
+        $funcionario =  User::find($id);
 
         $funcionario->name = $request->inFuncionarioNome;
 
@@ -114,9 +114,19 @@ class RegisterController extends Controller
 
         $funcionario->category = $request->inCategory;
 
-        $funcionario->save();
+       $funcionario->save();
 
         return redirect()->route('utilizadores');
+
+    }
+
+    public function deleteFuncionario($id){
+
+        $funcionario = User::find($id);
+
+        $funcionario->delete();
+
+        return redirect("/editUser")->with('success','true');
 
     }
 

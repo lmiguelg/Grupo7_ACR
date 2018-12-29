@@ -5,10 +5,10 @@
 
     <!-- Não esquecer em meter encriptação nisto tudo -->
 
-    <div>
+        <div class="form-editAll">
 
         <br>
-        <form class="form-editFuncionario" method="post" action="/editUser/{{$funcionario->id}})">
+        <form  method="post" action="/editUser/{{$funcionario->id}})">
             <h3 class="titulo">Editar o funcionario</h3>
             <div class="divColumnAddFuncionario">
                 <label class="formEdits">Nome do funcionario:</label><br>
@@ -42,6 +42,8 @@
 
 
         </form>
+
+        <a style="text-decoration: none;" id="btnDeleteProduct" href="/editUser/{{$funcionario->id}}/delete" onclick="verifica">Apagar funcionario</a>
     </div>
 
 

@@ -120,7 +120,22 @@ input{
 }
 #btnDeleteProduct{
 
-    width:97% !important;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+
+    outline: 0;
+    background: #4CAF50;
+    width:100px;
+    border: 0;
+    padding: 15px;
+
+    color: #FFFFFF;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left:25%;
+    margin-top: 15px;
+    margin-bottom: 15px;
 
 }
 .divProdInfoGeral{
@@ -438,7 +453,7 @@ table.inventoryTable tr:nth-child(even) {
 }
 
 /*editar fornecedores*/
-.form-editFuncionario{
+.form-editAll{
 
     position: relative;
     margin: 3% auto;
@@ -447,11 +462,12 @@ table.inventoryTable tr:nth-child(even) {
     border-radius: 5px;
     box-shadow: 3px 3px 10px #333;
     padding: 15px;
+    padding-bottom: 40px;
 
 
 }
 
-.form-editFuncionario .titulo{
+.form-editAll .titulo{
 
     text-align: center;
     font-weight: 200;
@@ -463,7 +479,7 @@ table.inventoryTable tr:nth-child(even) {
 }
 
 
-.form-editFuncionario .divColumnAddFornecedor{
+.form-editAll .divColumnAddFornecedor{
 
     font-family: "Roboto", sans-serif;
     outline: 0;
@@ -474,7 +490,7 @@ table.inventoryTable tr:nth-child(even) {
 }
 
 
-.form-editFuncionario #btnAddFuncionario{
+.form-editAll #btnAddFuncionario{
 
 
     font-family: "Roboto", sans-serif;
@@ -495,7 +511,7 @@ table.inventoryTable tr:nth-child(even) {
 
 }
 
-.form-editFuncionario .inFuncionario{
+.form-editAll .inFuncionario{
 
     margin: auto;
     margin-bottom: 10px;
@@ -504,7 +520,7 @@ table.inventoryTable tr:nth-child(even) {
 
 }
 
-.form-editFuncionario .formEdits{
+.form-editAll .formEdits{
 
     text-align: center;
 

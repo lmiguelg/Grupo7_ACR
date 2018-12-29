@@ -85,7 +85,7 @@ $(document).ready(function(){
 
     });
 
-    $("#formAddClient").on('submit',function (e) {
+    $("#formAddCliente").on('submit',function (e) {
 
         e.preventDefault();
 
@@ -126,7 +126,7 @@ $(document).ready(function(){
 
         });
 
-        $('#formAddClient')[0].reset();
+        $('#formAddCliente')[0].reset();
     });
 
 
