@@ -1,9 +1,9 @@
 
 @extends('layouts.app')
 @section('content')
-
+<h1>Utilizadores</h1>
     <div class="FornecedorList">
-        <table class="inventoryTable" id="FornecedorTable" style="margin-top: 200px;">
+        <table class="inventoryTable userTable" id="FornecedorTable" style="margin-top: 200px;">
             <tr >
                 <th id="thTitleInventory" colspan="7">Lista de Utilizadores</th>
             </tr>

@@ -1,5 +1,5 @@
 <div>
-    <table class="inventoryTable">
+    <table class="inventoryTable salesTable">
         <tr >
             <th id="thTitleInventory" colspan="7">Vendas efetuadas</th>
         </tr>

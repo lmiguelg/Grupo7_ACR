@@ -1,30 +1,31 @@
 @extends('layouts.app')
 @section('content')
-    <h1>Create new Sale</h1>
+    <h1>Criar nova venda    </h1>
 
 
 
     <div class="divNewSale verticalMenu">
     <form id="formSale" method="POST">
         <div class="divAddedProducts">
-            <p class="withBorder">Selected products</p>
+            <p class="withBorder">Produtos selecionados</p>
             <table class="ulSalesList">
                 <tr>
-                    <th class="">Product</th>
-                    <th class="">Remove</th>
+                    <th class="">Produto</th>
+                    <th>Preço</th>
+                    <th class="">Remover</th>
                 </tr>
 
 
             </table>
 
         </div>
-        <p class="withBorder goBottom">Client selected:</p>
+        <p class="withBorder goBottom">Cliente selecionado:</p>
         <p class="pClient goBottom dataSales"></p>
         <p class="withBorder goBottom">Total: </p>
         <p class="pTotal goBottom dataSales"></p>
 
         <input type="hidden" id="myToken" name="_token" value="{{ csrf_token() }}">
-        <input type="submit" id="btnSubmitSale" class="goBottom btnFinalizePurchase btnGeral" value="FINALIZA COMPRA">
+        <input type="submit" id="btnSubmitSale" class="goBottom btnFinalizePurchase btnGeral" value="FINALIZAR COMPRA">
 
     </form>
 
@@ -33,12 +34,12 @@
     <div class="productListSales verticalMenu">
         <table class="inventoryTable">
             <tr >
-                <th id="thTitleInventory" colspan="7">Clients List</th>
+                <th id="thTitleInventory" colspan="7">Lista de Clientes</th>
             </tr>
             <tr>
-                <th>Name</th>
+                <th>Nome</th>
                 <th>Nif</th>
-                <th>Add</th>
+                <th>Adicionar</th>
             </tr>
 
         @foreach($clients as $client)
@@ -56,12 +57,12 @@
     <div class="productListSales verticalMenu">
         <table class="inventoryTable">
             <tr >
-                <th id="thTitleInventory" colspan="7">Inventory List</th>
+                <th id="thTitleInventory" colspan="7">Inventário</th>
             </tr>
             <tr>
-                <th>Image</th>
-                <th>Name</th>
-                <th>Add</th>
+                <th>Imagem</th>
+                <th>Produto</th>
+                <th>Adicionar</th>
             </tr>
 
         @foreach($products as $product)
@@ -79,7 +80,7 @@
 
 
     function addClientToSale(name, id){
-        alert(name + id);
+        //alert(name + id);
 
         $.session.set('clientSelected', id);
 
@@ -91,7 +92,7 @@
 
     function addProductToSale(name, id, price){
 
-        alert(id + " "+name+" " +price);
+        //alert(id + " "+name+" " +price);
 
         var product = {id: id, name: name, price: price};//struct do produto para guardar na sessão
 
@@ -110,7 +111,7 @@
         console.log("ultimo prod: " + JSON.stringify(product));
 
         $('.ulSalesList').append("<tr class='prodDelete "+product.id +"'><td class='tdSales'>"+products[products.length - 1].name+
-        "</td><td><input type='button' value='X' class='btnRemoveProductSale' onclick='removeProduct("+id+")'></td></tr>");
+        "</td><td>"+products[products.length - 1].price+"</td><td><input type='button' value='X' class='btnRemoveProductSale' onclick='removeProduct("+id+")'></td></tr>");
 
         total(products);
 
@@ -122,7 +123,7 @@
         for(var i = 0; i < products.length; i++){
             //nome
             $('.ulSalesList').append("<tr class='prodDelete "+products[i].id +"'><td class='tdSales'>"+products[i].name+
-            "</td><td><input type='button' value='X' class='btnRemoveProductSale' onclick='removeProduct("+products[i].id+")'></td></tr>");
+            "</td><td>"+products[i].price+"</td><td><input type='button' value='X' class='btnRemoveProductSale' onclick='removeProduct("+products[i].id+")'></td></tr>");
         }
     }
 
