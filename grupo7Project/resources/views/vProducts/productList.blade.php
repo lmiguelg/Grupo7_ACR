@@ -125,16 +125,16 @@
             gapi.auth2.getAuthInstance().signOut();
 
             console.log(response.result);
-            document.getElementById("formAddFornecedor").reset();
+            document.getElementById("formAddProduct").reset();
         }, function(reason) {
             console.error('error: ' + reason.result.error.message);
         });
     }
 
     function initClient() {
-        var API_KEY = 'AIzaSyDwjxxY_G7omKoeUqz_lXQvfx_ZAyI-wYw'; // TODO: Update placeholder with desired API key.
+        var API_KEY = 'AIzaSyD4bmKeC54lggCY5i3zFTKaIezNAwr_y98'; // TODO: Update placeholder with desired API key.
 
-        var CLIENT_ID = '141972952306-ko8qs7kmcub3mvqkic6rvvle9t6to16g.apps.googleusercontent.com'; // TODO: Update placeholder with desired client ID.
+        var CLIENT_ID = '308006157010-0ghhvnaji1dsk6rljkqh3qj7dgksj29l.apps.googleusercontent.com'; // TODO: Update placeholder with desired client ID.
 
         // TODO: Authorize using one of the following scopes:
         //   'https://www.googleapis.com/auth/drive'
