@@ -37,7 +37,6 @@ $(document).ready(function(){
 
             }
         });
-        $('#formAddProduct')[0].reset();
 
     });
 
