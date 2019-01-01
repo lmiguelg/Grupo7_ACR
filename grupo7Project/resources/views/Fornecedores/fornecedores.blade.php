@@ -119,7 +119,7 @@
     }
 
     function initClient() {
-        var API_KEY = 'AIzaSyB47BvNQZAOAF9yUziq2Wd7MjZ09L0WaWM'; // TODO: Update placeholder with desired API key.
+        var API_KEY = 'AIzaSyDwjxxY_G7omKoeUqz_lXQvfx_ZAyI-wYw'; // TODO: Update placeholder with desired API key.
 
         var CLIENT_ID = '141972952306-ko8qs7kmcub3mvqkic6rvvle9t6to16g.apps.googleusercontent.com'; // TODO: Update placeholder with desired client ID.
 
