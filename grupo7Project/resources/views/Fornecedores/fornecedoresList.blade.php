@@ -1,6 +1,6 @@
 <div class="productList">
 
-    <table class="inventoryTable" id="FornecedorTable">
+    <table class="inventoryTable FornecedorTable" id="FornecedorTable">
         <tr >
             <th id="thTitleInventory" colspan="7">Lista de fornecedores</th>
         </tr>

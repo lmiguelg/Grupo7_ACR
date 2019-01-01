@@ -22,6 +22,8 @@ class ClientController extends Controller
 
     public function addClient(Request $request){
 
+
+        \Log::info($request);
         $client= new Clientes();
 
         $client->nome = $request->inClientNome;
@@ -32,13 +34,19 @@ class ClientController extends Controller
 
         $client->morada=$request->inMorada;
 
-        $client->email = $request -> inEmail;
+        $client->email = $request->inEmail;
 
-        $client->save();
 
-        $client = DB::table('clientes')->get();
+        if($client->save()){
+            $client = DB::table('clientes')->get();
 
-       return response()->json(["success" =>$client ]);
+            return response()->json(["success" =>$client ]);
+        }
+        else{
+            return response()->json(["success" =>"erro, não foi possível adicionar cliente"]);
+        }
+
+
 
         //return redirect(route('client'));
 

@@ -1,6 +1,6 @@
 <div class="ClientList">
 
-    <table class="inventoryTable" id="ClientTable">
+    <table class="inventoryTable ClientTable" id="ClientTable">
 
         <tr >
             <th id="thTitleInventory" colspan="7">Lista de Clientes</th>
