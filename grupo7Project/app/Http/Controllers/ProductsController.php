@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Product;
+use App\Services\PayUService\Exception;
 
 
 class ProductsController extends Controller
@@ -25,65 +26,69 @@ class ProductsController extends Controller
     }
 
     public function addProduct(Request $request){
-
-        \Log::info($request);
-        //Antes ver os produtos é necessário verificar o utilizador
-
-        $product = new Product;
-
-        $product->name              = $request->inProductName;
-
-        $product->quantity          = $request->inQuantity;
-
-        $product->expiration_date   = $request->inExpirationDate;
+        try{
 
 
-
-
-        //if($request->file('inProduct_photoAddNew') != null){
-
-
-            $file                       = $request->file('inProduct_photoAddNew');
-            $filename                   = time().'-'.$file->getClientOriginalName();
-            $file                       = $file->move('images/product_photos',$filename);
-            $product->filepath          = $filename;
-        //}
-
-
-        $product->price             = $request ->inProductPrice;
-
-        $product->fornecedor_id     = $request->inFornecedor;
-
-
-        $fornecedor= Fornecedors::find($request->inFornecedor);
-
-
-       /*for($i = 0; $i < 70; $i++){
+            \Log::info($request);
+            //Antes ver os produtos é necessário verificar o utilizador
 
             $product = new Product;
 
-            $product->name              = "prod $i";
+            $product->name              = $request->inProductName;
 
-            $product->quantity          = "$i";
+            $product->quantity          = $request->inQuantity;
 
-            $product->expiration_date   = "2018-11-23";
-
-            $product->filepath          = "sadasdiasdasgyudasd";
-
-            $product->price             = "$i";
-
-            $product->save();
-       }*/
+            $product->expiration_date   = $request->inExpirationDate;
 
 
-        if($product->save()){
-            $products                   = Product::get();
 
-            return response()->json(['success'=>[$products,$fornecedor]]);
-        }else{
-            return response()->json(['error'=>"Produto não foi adicionado. Verificar campos inseridos"]);
+
+            //if($request->file('inProduct_photoAddNew') != null){
+
+
+                $file                       = $request->file('inProduct_photoAddNew');
+                $filename                   = time().'-'.$file->getClientOriginalName();
+                $file                       = $file->move('images/product_photos',$filename);
+                $product->filepath          = $filename;
+            //}
+
+
+            $product->price             = $request ->inProductPrice;
+
+            $product->fornecedor_id     = $request->inFornecedor;
+
+
+            $fornecedor= Fornecedors::find($request->inFornecedor);
+
+
+        /*for($i = 0; $i < 70; $i++){
+
+                $product = new Product;
+
+                $product->name              = "prod $i";
+
+                $product->quantity          = "$i";
+
+                $product->expiration_date   = "2018-11-23";
+
+                $product->filepath          = "sadasdiasdasgyudasd";
+
+                $product->price             = "$i";
+
+                $product->save();
+        }*/
+
+
+            if($product->save()){
+                $products                   = Product::get();
+
+                return response()->json(['success'=>[$products,$fornecedor]]);
+            }else{
+                return response()->json(['error'=>"Produto não foi adicionado. Verificar campos inseridos"]);
+            }
+        }catch(Exception $e){
+            return $e->getMessage();
         }
-
 
 
 
