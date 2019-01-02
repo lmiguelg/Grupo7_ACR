@@ -171,7 +171,7 @@ $(document).ready(function(){
         for(var i = 0; i < products.length; i++){
             //nome
             $('.ulSalesList').append("<tr class='"+products[i].id +"'><td class='tdSales'>"+products[i].name+
-            "</td><td><input type='button' value='X' class='btnRemoveProductSale' onclick='removeProduct("+products[i].id+")'></td></tr>");
+            "</td><td>"+products[i].price+"</td><td><input type='button' value='X' class='btnRemoveProductSale' onclick='removeProduct("+products[i].id+")'></td></tr>");
         }
     }
 
