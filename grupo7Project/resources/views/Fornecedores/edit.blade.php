@@ -41,6 +41,6 @@
 
     </form>
 
-    <a href="/addFornecedor/{{$entidadeFornecedor->id}}/delete" id="deleteFornecedor" onclick="verifica">Apagar fornecedor</a>
+    <button id="deleteFornecedor"><a href="/addFornecedor/{{$entidadeFornecedor->id}}/delete" onclick="verifica"></a></button>
 </div>
 @endsection
