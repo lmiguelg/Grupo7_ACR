@@ -24,7 +24,7 @@ class FornecedorController extends Controller
 
 
     public function addFornecedor(Request $request){
-
+        \Log::info($request);
        $fornecedor= new Fornecedors();
 
         $fornecedor->nome = $request->inFornecedorNome;
