@@ -104,7 +104,7 @@ input{
     width: 350px;
     height: 300px;
 }
-.containerViewProducts .divImgProduct img{
+.divProdInfoGeral .divImgProduct img{
     width: 400px;
 
     margin-left:8%;
