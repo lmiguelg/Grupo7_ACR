@@ -12,22 +12,22 @@
 
         <div class="divColumnAddFuncionario">
             <label>Nome da empresa</label><br>
-            <input type="text" id="inFornecedorNome" name="inFornecedorNome" value="{{$entidadeFornecedor->nome}}" required>
+            <input type="text" size="200" id="inFornecedorNome" name="inFornecedorNome" value="{{$entidadeFornecedor->nome}}" required>
         </div>
 
         <div class="divColumnAddFuncionario">
             <label>NIF</label><br>
-            <input type="text" id="inNIF" name="inNIF" value="{{$entidadeFornecedor->nif}}" required>
+            <input type="text" id="inNIF" size="200" name="inNIF" value="{{$entidadeFornecedor->nif}}" required>
         </div>
 
         <div class="divColumnAddFuncionario">
             <label>contacto</label><br>
-            <input type="text" id="inContacto" name="inContacto" value="{{$entidadeFornecedor->contacto}}" required>
+            <input type="text" id="inContacto" size="200" name="inContacto" value="{{$entidadeFornecedor->contacto}}" required>
         </div>
 
         <div class="divColumnAddFuncionario">
             <label>Morada</label><br>
-            <input type="text" id="inMorada" name="inMorada" value="{{$entidadeFornecedor->morada}}" required>
+            <input type="text" id="inMorada" size="200" name="inMorada" value="{{$entidadeFornecedor->morada}}" required>
         </div>
 
         <input type="hidden" name="_token" value="{{csrf_token()}}">

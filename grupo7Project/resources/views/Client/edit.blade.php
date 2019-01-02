@@ -15,24 +15,24 @@
 
             <div class="divColumnAddFuncionario">
                 <label class="formEdits">Nome do Cliente:</label><br>
-                <input type="text"  class="inCliente" id="inClienteNome" name="inClienteNome" value="{{$cliente->nome}}" required>
+                <input type="text" size="200" class="inCliente" id="inClienteNome" name="inClienteNome" value="{{$cliente->nome}}" required>
             </div>
 
             <div class="divColumnAddFuncionario">
                 <label class="formEdits">NIF do Cliente:</label><br>
-                <input type="text"  class="inCliente" id="inClienteNif" name="inClienteNif" value="{{$cliente->nif}}" required>
+                <input type="text" size="200" class="inCliente" id="inClienteNif" name="inClienteNif" value="{{$cliente->nif}}" required>
 
             </div>
 
             <div class="divColumnAddFuncionario">
                 <label class="formEdits">Contacto do Cliente:</label><br>
-                <input type="text"  class="inCliente" id="inClienteContacto" name="inClienteContacto" value="{{$cliente->contacto}}" required>
+                <input type="text" size="200" class="inCliente" id="inClienteContacto" name="inClienteContacto" value="{{$cliente->contacto}}" required>
 
             </div>
 
             <div class="divColumnAddFuncionario">
                 <label class="formEdits">Morada do Cliente:</label><br>
-                <input type="text"  class="inCliente" id="inClienteMorada" name="inClienteMorada" value="{{$cliente->morada}}" required>
+                <input type="text" size="200" class="inCliente" id="inClienteMorada" name="inClienteMorada" value="{{$cliente->morada}}" required>
 
             </div>
 

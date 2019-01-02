@@ -12,12 +12,12 @@
     <form id="formAddProduct" action="#">
         <div class="divColumnAddProduct">
             <label>Produto</label><br>
-            <input type="text" id="inProductName" name="inProductName" required>
+            <input type="text" size="200" id="inProductName" name="inProductName" size="200" required>
         </div>
 
         <div class="divColumnAddProduct">
             <label>Quantidade</label><br>
-            <input type="text" id="inQuantity" name="inQuantity" required>
+            <input type="text" size="200" id="inQuantity" name="inQuantity" size="200" required>
         </div>
 
         <div class="divColumnAddProduct">

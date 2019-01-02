@@ -12,22 +12,22 @@
             <form id="formAddFornecedor" action="#">
                 <div class="divColumnAddFornecedor">
                     <label>Nome da empresa</label><br>
-                    <input type="text" id="inFornecedorNome" name="inFornecedorNome" required>
+                    <input type="text" size="200" id="inFornecedorNome" name="inFornecedorNome" required>
                 </div>
 
                 <div class="divColumnAddFornecedor">
                     <label>NIF</label><br>
-                    <input type="text" id="inNIF" name="inNIF" required>
+                    <input type="text" size="200" id="inNIF" name="inNIF" required>
                 </div>
 
                 <div class="divColumnAddFornecedor">
                     <label>contacto</label><br>
-                    <input type="text" id="inContacto" name="inContacto" required>
+                    <input type="text" size="200" id="inContacto" name="inContacto" required>
                 </div>
 
                 <div class="divColumnAddFornecedor">
                     <label>Morada</label><br>
-                    <input type="text" id="inMorada" name="inMorada" required>
+                    <input type="text" size="200" id="inMorada" name="inMorada" required>
                 </div>
 
                 <input type="hidden" name="_token" value="{{csrf_token()}}">

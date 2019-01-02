@@ -12,7 +12,7 @@
             <h3 class="titulo">Editar o funcionario</h3>
             <div class="divColumnAddFuncionario">
                 <label class="formEdits">Nome do funcionario:</label><br>
-                <input type="text"  class="inFuncionario" id="inFuncionarioNome" name="inFuncionarioNome" value="{{$funcionario->name}}" required>
+                <input type="text" size="200" class="inFuncionario" id="inFuncionarioNome" name="inFuncionarioNome" value="{{$funcionario->name}}" required>
             </div>
 
             <div class="divColumnAddFuncionario">

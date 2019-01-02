@@ -21,7 +21,7 @@
         <form class="formEditProduct" method="POST"  enctype="multipart/form-data" action="{{ URL('/addProduct/productDetails/'.$product->id .'/edit')}}">
             <div class="formEditName">
                 <label>Nome:</label>
-                <input type="text" name="inName" value="{{$product->name}}" placeholder="{{$product->name}}">
+                <input type="text" name="inName" size="200" value="{{$product->name}}" placeholder="{{$product->name}}">
             </div>
             <br>
             <div class="formEditExpirationDate">

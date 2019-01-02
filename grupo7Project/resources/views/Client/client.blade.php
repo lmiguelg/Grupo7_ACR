@@ -12,22 +12,22 @@
             <form id="formAddCliente" action="#">
                 <div class="divColumnAddFornecedor" style="margin-bottom: 20px; margin-right: 5px;">
                     <label>Nome </label><br>
-                    <input type="text" id="inClientNome" name="inClientNome" required>
+                    <input type="text" id="inClientNome" size="200" name="inClientNome" required>
                 </div>
 
                 <div class="divColumnAddFornecedor" style="margin-bottom: 20px; margin-right: 5px;">
                     <label>NIF</label><br>
-                    <input type="text" id="inNIF" name="inNIF" required>
+                    <input type="text" id="inNIF" size="200" name="inNIF" required>
                 </div>
 
                 <div class="divColumnAddFornecedor" style="margin-bottom: 20px;">
                     <label>contacto</label><br>
-                    <input type="text" id="inContacto" name="inContacto" required>
+                    <input type="text" id="inContacto" size="200" name="inContacto" required>
                 </div>
 
                 <div class="divColumnAddFornecedor" style="margin-bottom: 20px; ">
                     <label>Morada</label><br>
-                    <input type="text" id="inMorada" name="inMorada" required>
+                    <input type="text" id="inMorada" size="200" name="inMorada" required>
                 </div>
 
                 <div class="divColumnAddFornecedor" style="margin-bottom: 20px; ">
