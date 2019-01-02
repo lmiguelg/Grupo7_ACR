@@ -103,7 +103,7 @@
         var quantidade = document.getElementById("inQuantity").value;
         var preco = document.getElementById("inProductPrice").value;
         var fornecedor = document.getElementById("inFornecedor").value;
-
+        console.log(nome +quantidade+preco+fornecedor );
         var valueRangeBody = {
             // TODO: Add desired properties to the request body.
 

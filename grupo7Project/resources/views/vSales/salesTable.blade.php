@@ -8,7 +8,7 @@
             <th>Cliente</th>
             <th>Preço(€)</th>
             <th>Data/Hora</th>
-            <th>Details</th>
+            <th>Fatura</th>
         </tr>
 
         @foreach($sales as $sale)

@@ -56,4 +56,11 @@ class ApiController extends Controller
             return new ProductListResource($product);
         }
     }
+
+    function reqToken($request){
+        $header = $request->header('Authorization');
+        echo $header;
+    }
+
+
 }

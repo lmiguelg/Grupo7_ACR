@@ -62,9 +62,11 @@ Route::get('/', function () {
 
     //rota para a api
     Route::get('/Api/getProducts','ApiController@getProducts');
-    Route::get('/Api/getProducts/{id}','ApiController@getProduct');
+    Route::get('/Api/getProduct/{id}','ApiController@getProduct');
 
     Route::post('/Api/addProduct','ApiController@addProduct');
     Route::put('/Api/addProduct','ApiController@addProduct');
 
     Route::delete('/Api/deleteProduct/{id}','ApiController@deleteProduct');
+
+

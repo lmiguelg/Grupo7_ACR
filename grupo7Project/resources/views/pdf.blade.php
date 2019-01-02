@@ -9,9 +9,7 @@
 
 <body>
 
-<style>
 
-</style>
 
     <div class="divGlobalInvoice">
         <div class="headerInvoice">
@@ -68,5 +66,16 @@
 
     </div>
 
+    <button id="btnFatura" onclick="obterFatura()">Obter Fatura</button>
 
+
+    <script>
+    function obterFatura(){
+        document.getElementById("btnFatura").style.display = 'none';
+        window.print();
+    }
+    </script>
 </body>
+
+
+
