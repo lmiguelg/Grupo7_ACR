@@ -9,7 +9,7 @@
     <div class="form-editAll">
 
         <br>
-        <form  method="post" action="/addClient/{{$cliente->id}})">
+        <form  id="formEditCliente" method="post" action="/addClient/{{$cliente->id}})">
             <h3 class="titulo">Editar Cliente</h3>
 
 
@@ -52,8 +52,10 @@
 
 
         </form>
+        <div class="btnDeleteCliente">
+            <a style="text-decoration: none;" id="btnDeleteProduct" href="/addClient/{{$cliente->id}}/delete" onclick="verifica">Delete</a>
 
-        <a style="text-decoration: none;" id="btnDeleteProduct" href="/addClient/{{$cliente->id}}/delete" onclick="verifica">Delete</a>
+        </div>
     </div>
 
 

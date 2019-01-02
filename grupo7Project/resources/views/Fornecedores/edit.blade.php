@@ -8,7 +8,7 @@
 <div class="form-editAll">
     <h3 class="titulo">Editar o Fornecedor</h3>
     <br>
-    <form method="post" action="/addFornecedor/{{$entidadeFornecedor->id}})">
+    <form id="formEditFornecedor" method="post" action="/addFornecedor/{{$entidadeFornecedor->id}})">
 
         <div class="divColumnAddFuncionario">
             <label>Nome da empresa</label><br>
@@ -40,7 +40,10 @@
 
 
     </form>
+    <div class="divDeleteFornecedor">
+        <a id="deleteFornecedor" href="/addFornecedor/{{$entidadeFornecedor->id}}/delete" onclick="verifica">Apagar Fornecedor</a>
+    </div>
 
-    <button id="deleteFornecedor"><a href="/addFornecedor/{{$entidadeFornecedor->id}}/delete" onclick="verifica"></a></button>
+
 </div>
 @endsection

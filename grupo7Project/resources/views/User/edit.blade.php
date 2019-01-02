@@ -8,7 +8,7 @@
         <div class="form-editAll">
 
         <br>
-        <form  method="post" action="/editUser/{{$funcionario->id}})">
+        <form  id="formEditeUser" method="post" action="/editUser/{{$funcionario->id}})">
             <h3 class="titulo">Editar o funcionario</h3>
             <div class="divColumnAddFuncionario">
                 <label class="formEdits">Nome do funcionario:</label><br>

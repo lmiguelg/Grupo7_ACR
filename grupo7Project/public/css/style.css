@@ -136,17 +136,23 @@ input{
     margin-top: 15px;
     margin-bottom: 15px;
 }
+
+.btnDeleteCliente{
+    width: 100%;
+}
 #btnDeleteProduct{
 
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     text-align: center;
 
+    display: inline-block;
     outline: 0;
     background: rgb(211, 30, 30);
-    width:100%;
+    width: 100%;
     border: 0;
-    padding: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 
     color: #FFFFFF;
     font-size: 14px;
@@ -453,6 +459,12 @@ table.inventoryTable tr:nth-child(even) {
     margin-left: auto;
 
 }
+#formEditCliente .divColumnAddFuncionario input{
+    width:96%;
+}
+#formEditeUser .divColumnAddFuncionario input{
+    width:96%;
+}
 
 #formAddCliente .divColumnAddFornecedor{
 
@@ -476,18 +488,25 @@ table.inventoryTable tr:nth-child(even) {
 #deleteFornecedor{
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
-
     outline: 0;
-    background: #4CAF50;
+    background: rgb(211, 35, 35);
     width: 100%;
+
     border: 0;
-    padding: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     color: #FFFFFF;
     font-size: 14px;
     cursor: pointer;
-
     margin-top: 15px;
     margin-bottom: 15px;
+    text-decoration:none;
+    display:inline-block;
+
+}
+.divDeleteFornecedor{
+    width: 100%;
+    text-align: center;
 
 }
 
@@ -495,13 +514,14 @@ table.inventoryTable tr:nth-child(even) {
 .form-editAll{
 
     position: relative;
-    margin: 3% auto;
+    margin: auto;
     background: #ecf0f1;
     width: 350px;
     border-radius: 5px;
     box-shadow: 3px 3px 10px #333;
     padding: 15px;
     padding-bottom: 40px;
+    margin-top:2%;
 
 
 }
@@ -522,9 +542,8 @@ table.inventoryTable tr:nth-child(even) {
 
     font-family: "Roboto", sans-serif;
     outline: 0;
-    width: 85%;
+    width: 100%;
     border: none;
-
     font-size: 14px;
 }
 
@@ -535,7 +554,7 @@ table.inventoryTable tr:nth-child(even) {
     text-transform: uppercase;
     outline: 0;
     background: #4CAF50;
-    width: 100%;
+    width: 100%!important;
     border: 0;
     padding: 15px;
     color: #FFFFFF;
@@ -552,6 +571,14 @@ table.inventoryTable tr:nth-child(even) {
     margin: auto;
     margin-bottom: 10px;
 
+
+}
+#formEditFornecedor .divColumnAddFuncionario input{
+    width: 96%;
+
+}
+.divColumnAddFuncionario{
+    margin-top: 2%;
 }
 
 .form-editAll .formEdits{
@@ -650,4 +677,5 @@ table.inventoryTable tr:nth-child(even) {
 .userTable{
     margin-top:10px !important;
 }
+/*------------------------------------------------------------------*/
 
