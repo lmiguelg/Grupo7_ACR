@@ -76,12 +76,16 @@ class ProductsController extends Controller
        }*/
 
 
-        $product->save();
+        if($product->save()){
+            $products                   = Product::get();
+
+            return response()->json(['success'=>[$products,$fornecedor]]);
+        }else{
+            return response()->json(['error'=>"Produto não foi adicionado. Verificar campos inseridos"]);
+        }
 
 
-        $products                   = Product::get();
 
-        return response()->json(['success'=>[$products,$fornecedor],'error'=>"sdasdasd"]);
 
         //return redirect("/addProduct");
 
@@ -123,11 +127,13 @@ class ProductsController extends Controller
 
         $product->fornecedor_id     = $request->inFornecedor;
 
-        $product->save();
+        if($product->save()){
+            return redirect("/addProduct");
+        }
 
         //\Log::info($inputs);
         //return redirect("/addProduct/productDetails/{$id}/edit");
-        return redirect("/addProduct");
+
 
     }
     public function productDelete($id){

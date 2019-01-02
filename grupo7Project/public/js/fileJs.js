@@ -35,6 +35,9 @@ $(document).ready(function(){
                 console.log(lastElement);
                 alert("Produto adicionado com sucesso!");
 
+            },
+            error:function(data){
+                alert(data);
             }
         });
 
