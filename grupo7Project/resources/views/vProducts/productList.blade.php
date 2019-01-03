@@ -100,8 +100,8 @@
         };
 
         var nome = document.getElementById("inProductName").value;
-        var quantidade = document.getElementById("inQuantity").value;
-        var preco = document.getElementById("inProductPrice").value;
+        var quantidade = parseInt(document.getElementById("inQuantity").value);
+        var preco = parseFloat(document.getElementById("inProductPrice").value);
         var fornecedor = document.getElementById("inFornecedor").value;
         console.log(nome +quantidade+preco+fornecedor );
         var valueRangeBody = {
