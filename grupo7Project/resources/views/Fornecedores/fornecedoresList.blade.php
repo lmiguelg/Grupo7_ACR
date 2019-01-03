@@ -19,7 +19,7 @@
                 <td>{{$fornecedor->nif}}</td>
                 <td>{{$fornecedor->contacto}}</td>
                 <td>{{$fornecedor->morada}}</td>
-                <td><a href="addFornecedor/{{ $fornecedor->id }}">Edita</a>
+                <td><a href="addFornecedor/{{ $fornecedor->id }}">Editar</a>
                 </td><!--vai redirecionar para o produto
                                         e vai ser possivel editá-lo-->
 

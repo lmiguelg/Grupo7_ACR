@@ -55,7 +55,7 @@
                 <input type="file" id="testUpload"name="inProduct_photo" title="Product Photo"><br><br>
             </div>
             <input type="hidden" id="myToken" name="_token" value="{{ csrf_token() }}">
-            <input type="submit" value="Guardar Alterações" id="btnSubmitSaveProduct">
+            <input type="submit" value="Guardar alterações" id="btnSubmitSaveProduct">
         </form>
        <input type="button" value="Apagar Produto" id="btnDeleteProduct" onclick="verifyDelete('{{$product->name}}')">
 

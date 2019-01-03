@@ -21,7 +21,7 @@
                     <td>{{$utilizador->username}}</td>
                     <td>{{$utilizador->email}}</td>
                     <td>{{$utilizador->category}}</td>
-                    <td><a href="editUser/{{ $utilizador->id }}">Edita</a></td><!--vai redirecionar para o produto
+                    <td><a href="editUser/{{ $utilizador->id }}">Editar</a></td><!--vai redirecionar para o produto
                                         e vai ser possivel editá-lo-->
 
                 </tr>

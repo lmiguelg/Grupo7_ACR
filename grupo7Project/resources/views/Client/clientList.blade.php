@@ -21,7 +21,7 @@
                 <td>{{$client->contacto}}</td>
                 <td>{{$client->morada}}</td>
                 <td>{{$client->email}}</td>
-                <td><a href="addClient/{{ $client->id }}">Edita</a></td><!--vai redirecionar para o produto
+                <td><a href="addClient/{{ $client->id }}">Editar</a></td><!--vai redirecionar para o produto
                                         e vai ser possivel editá-lo-->
 
             </tr>

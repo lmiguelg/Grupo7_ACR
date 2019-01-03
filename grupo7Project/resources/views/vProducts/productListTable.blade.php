@@ -27,7 +27,7 @@
                         <td>{{$fornecedor->nome}}</td>
                     @endif
                 @endforeach
-                <td><a href="{{ URL('/addProduct/productDetails/'.$product->id .'/edit')}}">+</a></td><!--vai redirecionar para o produto
+                <td><a href="{{ URL('/addProduct/productDetails/'.$product->id .'/edit')}}">Editar</a></td><!--vai redirecionar para o produto
                                         e vai ser possivel editá-lo-->
             </tr>
 

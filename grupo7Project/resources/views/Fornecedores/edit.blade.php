@@ -33,7 +33,7 @@
         <input type="hidden" name="_token" value="{{csrf_token()}}">
 
         <div class="divColumnAddFuncionario">
-            <input type="submit" value="Edit" id="btnAddFuncionario">
+            <input type="submit" value="Guardar alterações" id="btnAddFuncionario">
         </div>
 
 
